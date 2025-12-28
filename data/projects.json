@@ -18,7 +18,7 @@
             "github": "https://github.com/raushanraj/snaplocate"
         },
         "image": "/projects/snaplocate.png",
-        "shortDescription": "Enables students to instantly locate faculty and classrooms using real-time data, reducing search friction across campus.",
+        "shortDescription": "Instantly locate faculty and classrooms using real-time data, reducing campus search friction.",
         "detailsFile": "snaplocate.md"
     },
     {
@@ -41,7 +41,7 @@
             "github": "https://github.com/raushanraj/cryptocrafters"
         },
         "image": "/projects/cryptocrafters.png",
-        "shortDescription": "Delivers real-time cryptocurrency market insights with ML-based price predictions and interactive data visualizations.",
+        "shortDescription": "Real-time crypto market insights with ML-based price predictions and interactive visualizations.",
         "detailsFile": "cryptocrafters.md"
     },
     {
@@ -62,7 +62,7 @@
             "github": "https://github.com/raushanraj/transport-management"
         },
         "image": "/projects/transport.png",
-        "shortDescription": "Streamlines transport operations with integrated media management, reducing administrative overhead.",
+        "shortDescription": "Streamlines transport operations with integrated media management and file handling.",
         "detailsFile": "transport-management.md"
     }
 ]

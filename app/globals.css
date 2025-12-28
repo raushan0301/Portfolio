@@ -106,15 +106,56 @@ h5 {
 p {
   font-size: 16px;
   font-weight: 300;
-  line-height: 1.7;
+  line-height: 1.8; /* Increased from 1.7 for better readability */
   color: var(--text-secondary);
-  margin-bottom: 16px;
+  margin-bottom: 18px; /* Slightly increased spacing */
 }
 
 small {
   font-size: 14px;
   font-weight: 400;
-  line-height: 1.5;
+  line-height: 1.6;
+}
+
+/* Visual Differentiation for Sections */
+#projects {
+  /* Strongest contrast - draws attention */
+  background: var(--bg-secondary);
+}
+
+#projects .card {
+  background: var(--bg-tertiary);
+  border-color: var(--border-primary);
+}
+
+#skills {
+  /* Lighter background - softer feel */
+  background: var(--bg-primary);
+}
+
+#skills .card {
+  background: rgba(26, 26, 26, 0.5); /* Lighter than default */
+  border-color: rgba(38, 38, 38, 0.6);
+}
+
+#experience {
+  /* Medium contrast */
+  background: var(--bg-primary);
+}
+
+#experience .card {
+  background: var(--bg-tertiary);
+  border-color: var(--border-primary);
+}
+
+#certifications {
+  /* Similar to skills - lighter */
+  background: var(--bg-primary);
+}
+
+#certifications .card {
+  background: rgba(26, 26, 26, 0.5);
+  border-color: rgba(38, 38, 38, 0.6);
 }
 
 /* Selection */
