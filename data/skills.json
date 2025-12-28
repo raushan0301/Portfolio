@@ -1,0 +1,80 @@
+{
+    "webDevelopment": {
+        "title": "Web Development",
+        "description": "Building secure, scalable web applications from frontend to deployment",
+        "categories": [
+            {
+                "name": "Frontend",
+                "skills": [
+                    "HTML",
+                    "CSS",
+                    "JavaScript",
+                    "React",
+                    "Next.js",
+                    "Tailwind CSS"
+                ]
+            },
+            {
+                "name": "Backend",
+                "skills": [
+                    "Node.js",
+                    "Express",
+                    "REST APIs",
+                    "Firebase",
+                    "Cloudinary"
+                ]
+            },
+            {
+                "name": "Databases & Tools",
+                "skills": [
+                    "PostgreSQL",
+                    "Supabase (RLS)",
+                    "Firebase",
+                    "Git/GitHub"
+                ]
+            },
+            {
+                "name": "Focus Areas",
+                "skills": [
+                    "Full Stack Architecture",
+                    "Real-time Data Handling",
+                    "Secure Authentication",
+                    "Responsive Design"
+                ]
+            }
+        ]
+    },
+    "cybersecurity": {
+        "title": "Cybersecurity & Ethical Hacking",
+        "description": "Practicing offensive security to build more secure systems",
+        "categories": [
+            {
+                "name": "Security Fundamentals",
+                "skills": [
+                    "Authentication & Authorization",
+                    "Role-Based Access Control",
+                    "Secure Coding Practices",
+                    "Data Protection"
+                ]
+            },
+            {
+                "name": "Ethical Hacking",
+                "skills": [
+                    "EC-Council CEH v13 Labs",
+                    "CND v3 Labs",
+                    "Vulnerability Assessment",
+                    "Penetration Testing"
+                ]
+            },
+            {
+                "name": "Applied Security",
+                "skills": [
+                    "Secure API Design",
+                    "Supabase RLS Policies",
+                    "Input Validation",
+                    "Session Management"
+                ]
+            }
+        ]
+    }
+}

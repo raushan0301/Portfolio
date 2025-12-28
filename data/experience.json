@@ -1,0 +1,43 @@
+[
+    {
+        "id": "cpp-intern",
+        "title": "C/C++ Development Intern",
+        "company": "Tech Company",
+        "location": "Remote",
+        "period": "Summer 2024",
+        "type": "Internship",
+        "description": "Worked on systems-level programming projects, focusing on performance optimization and code quality.",
+        "responsibilities": [
+            "Developed and optimized C++ modules for core system functionality",
+            "Implemented efficient algorithms for data processing",
+            "Collaborated with senior developers on code reviews",
+            "Debugged and resolved complex memory management issues"
+        ],
+        "technologies": [
+            "C++",
+            "C",
+            "Git",
+            "Linux"
+        ]
+    },
+    {
+        "id": "mastercard-security",
+        "title": "Security Awareness Simulation",
+        "company": "Mastercard (Forage)",
+        "location": "Virtual Experience",
+        "period": "2024",
+        "type": "Learning",
+        "description": "Completed hands-on cybersecurity simulation focusing on phishing awareness and security protocols.",
+        "responsibilities": [
+            "Analyzed phishing email patterns and social engineering tactics",
+            "Designed security awareness training materials",
+            "Evaluated security vulnerabilities in communication systems",
+            "Developed strategies for improving organizational security posture"
+        ],
+        "technologies": [
+            "Security Awareness",
+            "Phishing Analysis",
+            "Risk Assessment"
+        ]
+    }
+]

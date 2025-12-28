@@ -1,0 +1,68 @@
+[
+    {
+        "id": "snaplocate",
+        "title": "SnapLocate",
+        "tagline": "Live Campus Platform for Locating Professors & Classrooms",
+        "category": "Full Stack Web Application",
+        "tech": [
+            "React",
+            "Firebase",
+            "Firestore",
+            "Firebase Auth",
+            "Real-time Database"
+        ],
+        "year": "2024",
+        "featured": true,
+        "links": {
+            "live": "https://snaplocate.in",
+            "github": "https://github.com/raushanraj/snaplocate"
+        },
+        "image": "/projects/snaplocate.png",
+        "shortDescription": "Enables students to instantly locate faculty and classrooms using real-time data, reducing search friction across campus.",
+        "detailsFile": "snaplocate.md"
+    },
+    {
+        "id": "cryptocrafters",
+        "title": "CryptoCrafters",
+        "tagline": "Market Analysis & Price Prediction Platform",
+        "category": "Full Stack Web Application",
+        "tech": [
+            "React",
+            "Supabase",
+            "PostgreSQL",
+            "ML-based Predictions",
+            "Chart.js",
+            "REST APIs"
+        ],
+        "year": "2024",
+        "featured": false,
+        "links": {
+            "live": "https://cryptocrafters.netlify.app",
+            "github": "https://github.com/raushanraj/cryptocrafters"
+        },
+        "image": "/projects/cryptocrafters.png",
+        "shortDescription": "Delivers real-time cryptocurrency market insights with ML-based price predictions and interactive data visualizations.",
+        "detailsFile": "cryptocrafters.md"
+    },
+    {
+        "id": "transport-management",
+        "title": "Transport Management System",
+        "tagline": "Integrated Media Management Solution",
+        "category": "Full Stack Web Application",
+        "tech": [
+            "React",
+            "Node.js",
+            "PostgreSQL",
+            "Cloudinary",
+            "Express"
+        ],
+        "year": "2024",
+        "featured": false,
+        "links": {
+            "github": "https://github.com/raushanraj/transport-management"
+        },
+        "image": "/projects/transport.png",
+        "shortDescription": "Streamlines transport operations with integrated media management, reducing administrative overhead.",
+        "detailsFile": "transport-management.md"
+    }
+]

@@ -1,0 +1,57 @@
+[
+    {
+        "id": "learning-phase",
+        "year": "2023",
+        "title": "Foundation Building",
+        "description": "Started journey in web development and programming fundamentals",
+        "milestones": [
+            "Learned HTML, CSS, and JavaScript",
+            "Completed Full Stack Web Development Bootcamp",
+            "Built first web applications"
+        ]
+    },
+    {
+        "id": "project-phase",
+        "year": "2024 Q1-Q2",
+        "title": "Project Development",
+        "description": "Applied skills to build production-oriented applications",
+        "milestones": [
+            "Developed SnapLocate campus navigation platform",
+            "Built CryptoCrafters analysis application",
+            "Learned React, Next.js, and Firebase"
+        ]
+    },
+    {
+        "id": "internship-phase",
+        "year": "2024 Q3",
+        "title": "Professional Experience",
+        "description": "Gained industry experience through internship",
+        "milestones": [
+            "C/C++ Development Internship",
+            "Systems-level programming exposure",
+            "Professional code review practices"
+        ]
+    },
+    {
+        "id": "security-phase",
+        "year": "2024 Q4",
+        "title": "Security Focus",
+        "description": "Expanded expertise into cybersecurity domain",
+        "milestones": [
+            "Completed Mastercard Security Simulation",
+            "Studied security fundamentals and threat analysis",
+            "Integrated security practices into development workflow"
+        ]
+    },
+    {
+        "id": "current-phase",
+        "year": "2025",
+        "title": "Dual Specialization",
+        "description": "Pursuing expertise in both development and security",
+        "milestones": [
+            "Building secure, scalable applications",
+            "Deepening cybersecurity knowledge",
+            "Preparing for industry roles"
+        ]
+    }
+]
