@@ -250,8 +250,24 @@ export default function Projects({ projects, projectDetails }: ProjectsProps) {
                                         h3: ({ children }) => (
                                             <h3 className="text-base font-semibold text-[var(--text-primary)] mt-6 mb-3">{children}</h3>
                                         ),
-                                        p: ({ children }) => {
-                                            // Render paragraphs normally - strong tags handle headings
+                                        p: ({ children, node }) => {
+                                            // Check if this paragraph contains only a strong tag with section headings
+                                            const hasBlockLevelStrong = node?.children?.some((child: any) => {
+                                                if (child.type === 'element' && child.tagName === 'strong') {
+                                                    const text = child.children?.[0]?.value || '';
+                                                    return ['Problem', 'Solution', 'Why it matters', 'System Design',
+                                                        'Key Engineering Decisions', 'Impact Metrics', 'Frontend',
+                                                        'Backend', 'ONE-LINER'].includes(text);
+                                                }
+                                                return false;
+                                            });
+
+                                            // If it contains block-level strong tags, return Fragment to avoid p > div nesting
+                                            if (hasBlockLevelStrong) {
+                                                return <>{children}</>;
+                                            }
+
+                                            // Otherwise render as normal paragraph
                                             return (
                                                 <p className="text-sm text-[var(--text-secondary)] opacity-90 mb-3 leading-relaxed max-w-none">{children}</p>
                                             );

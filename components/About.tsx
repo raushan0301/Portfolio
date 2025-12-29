@@ -64,10 +64,10 @@ export default function About({ intro, approach, current }: AboutProps) {
                                 </h3>
                                 <ul className="space-y-3">
                                     {[
-                                        'Security-first development mindset',
                                         'Full-stack architecture & system design',
                                         'Role-based access control implementation',
-                                        'Production-grade code quality'
+                                        'Production-grade code quality',
+                                        'Security-first development mindset'
                                     ].map((strength, idx) => (
                                         <li key={idx} className="flex items-start text-[var(--text-secondary)]">
                                             <span className="text-[var(--accent-primary)] mr-3 mt-1">✓</span>

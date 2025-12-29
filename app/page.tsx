@@ -12,6 +12,7 @@ import Contact from '@/components/Contact';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import VideoBackground from '@/components/VideoBackground';
+import AvailableBadge from '@/components/AvailableBadge';
 
 // Load data from JSON files
 function loadJSON(filename: string) {
@@ -95,6 +96,9 @@ export default function Home() {
       />
 
       <Footer />
+
+      {/* Floating Available Badge */}
+      <AvailableBadge />
     </main>
   );
 }

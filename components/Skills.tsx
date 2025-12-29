@@ -44,7 +44,7 @@ export default function Skills({ webDevelopment, cybersecurity }: SkillsProps) {
                         {/* Stronger Category Header */}
                         <div className="flex items-center gap-2 mb-3">
                             <span className="w-1 h-1 rounded-full bg-[var(--accent-primary)]"></span>
-                            <h4 className="text-xs font-bold text-[var(--text-primary)] uppercase tracking-widest">
+                            <h4 className="text-xs font-bold text-[var(--text-primary)]">
                                 {category.name}
                             </h4>
                         </div>

@@ -3,7 +3,7 @@
   "title": "Full Stack Web Developer & Cybersecurity Enthusiast",
   "tagline": "Building secure, scalable web applications from frontend to deployment with a security-first mindset.",
   "subtitle": "B.Tech Computer Engineering @ Thapar Institute of Engineering & Technology",
-  "focus": "Full Stack Development • Cybersecurity • Ethical Hacking • React • Node.js",
+  "focus": "Full Stack Development • Cybersecurity • Ethical Hacking",
   "email": "rraj_be23@thapar.edu",
   "github": "https://github.com/raushan0301",
   "linkedin": "https://www.linkedin.com/in/raushan00",
@@ -11,7 +11,7 @@
   "location": "Ranchi, Jharkhand, India",
   "about": {
     "intro": "I'm a B.Tech Computer Engineering student at Thapar Institute of Engineering & Technology (TIET), specializing in building secure and scalable web applications. I cover everything from frontend UI to backend logic and deployment, with a strong interest in Cybersecurity and Ethical Hacking.",
-    "approach": "My development philosophy centers on writing secure, maintainable code. I don't just build features—I architect systems with security considerations baked in from the start. Whether it's implementing role-based access control with Supabase RLS, securing authentication flows with Firebase, or designing scalable database schemas with PostgreSQL, I approach every project with both a builder's creativity and a defender's vigilance.",
+    "approach": "My development philosophy centers on writing secure, maintainable code. I don't just build features, I architect systems with security considerations baked in from the start. Whether it's implementing role-based access control with Supabase RLS, securing authentication flows with Firebase, or designing scalable database schemas with PostgreSQL, I approach every project with both a builder's creativity and a defender’s mindset.",
     "current": "Currently, I'm deepening my expertise in full-stack development with React, Node.js, and Express, while actively practicing offensive security techniques through EC-Council CEH v13 and CND v3 Labs. This dual perspective makes me a more thoughtful and security-aware engineer."
   }
 }

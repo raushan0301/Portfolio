@@ -4,75 +4,84 @@
         "description": "Building secure, scalable web applications from frontend to deployment",
         "categories": [
             {
-                "name": "Frontend",
+                "name": "Frontend Engineering",
                 "skills": [
                     "HTML",
                     "CSS",
                     "JavaScript",
-                    "React",
+                    "React (Component Architecture)",
                     "Next.js",
                     "Tailwind CSS"
                 ]
             },
             {
-                "name": "Backend",
+                "name": "Backend Engineering",
                 "skills": [
                     "Node.js",
-                    "Express",
+                    "Express.js",
                     "REST APIs",
-                    "Firebase",
-                    "Cloudinary"
+                    "Firebase (Auth, Firestore)",
+                    "Cloudinary (Media Management)"
                 ]
             },
             {
-                "name": "Databases & Tools",
+                "name": "Data & Infrastructure",
                 "skills": [
+                    "Git & GitHub",
                     "PostgreSQL",
-                    "Supabase (RLS)",
-                    "Firebase",
-                    "Git/GitHub"
+                    "Supabase (Row Level Security)",
+                    "Firestore Data Modeling",
+                    "Environment Configuration"
                 ]
             },
             {
-                "name": "Focus Areas",
+                "name": "Engineering Focus",
                 "skills": [
-                    "Full Stack Architecture",
-                    "Real-time Data Handling",
-                    "Secure Authentication",
-                    "Responsive Design"
+                    "Full-Stack System Design",
+                    "Real-Time Data Synchronization",
+                    "Performance Optimization",
+                    "Responsive & Accessible UI"
                 ]
             }
         ]
     },
     "cybersecurity": {
         "title": "Cybersecurity & Ethical Hacking",
-        "description": "Practicing offensive security to build more secure systems",
+        "description": "Hands-on experience in network defense and ethical hacking fundamentals.",
         "categories": [
             {
-                "name": "Security Fundamentals",
+                "name": "Fundamentals",
                 "skills": [
-                    "Authentication & Authorization",
-                    "Role-Based Access Control",
-                    "Secure Coding Practices",
-                    "Data Protection"
+                    "CIA Triad (Confidentiality, Integrity..)",
+                    "Authentication vs Authorization",
+                    "Threat Modeling Basics",
+                    "Security Policies & Risk Awareness"
+                ]
+            },
+            {
+                "name": "Network & Endpoint",
+                "skills": [
+                    "Network Attack & Defense Strategies",
+                    "Perimeter Security Concepts",
+                    "Endpoint Security (Windows & Linux)",
+                    "Mobile & IoT Security Fundamentals"
                 ]
             },
             {
                 "name": "Ethical Hacking",
                 "skills": [
-                    "EC-Council CEH v13 Labs",
-                    "CND v3 Labs",
-                    "Vulnerability Assessment",
-                    "Penetration Testing"
+                    "Footprinting & Reconnaissance",
+                    "Scanning & Enumeration",
+                    "Vulnerability Analysis",
+                    "Basic Penetration Testing Methodologies"
                 ]
             },
             {
-                "name": "Applied Security",
+                "name": "Hands-on Labs & Training",
                 "skills": [
-                    "Secure API Design",
-                    "Supabase RLS Policies",
-                    "Input Validation",
-                    "Session Management"
+                    "EC-Council CEH v13 Labs",
+                    "EC-Council CND v3 Labs",
+                    "Attack & Defense Simulations"
                 ]
             }
         ]

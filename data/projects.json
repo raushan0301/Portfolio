@@ -2,20 +2,20 @@
     {
         "id": "snaplocate",
         "title": "SnapLocate",
-        "tagline": "Live Campus Platform for Locating Professors & Classrooms",
+        "tagline": "Live Campus Platform for Locating Professors, Classrooms & More",
         "category": "Full Stack Web Application",
         "tech": [
-            "React",
+            "JavaScript",
             "Firebase",
             "Firestore",
             "Firebase Auth",
             "Real-time Database"
         ],
-        "year": "2024",
+        "year": "2025",
         "featured": true,
         "links": {
             "live": "https://snaplocate.in",
-            "github": "https://github.com/raushanraj/snaplocate"
+            "github": "https://github.com/raushan0301/snaplocate-v2"
         },
         "image": "/projects/snaplocate.png",
         "shortDescription": "Instantly locate faculty and classrooms using real-time data, reducing campus search friction.",

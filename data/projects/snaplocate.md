@@ -24,9 +24,9 @@
 **System Design**
 
 Frontend  
-• React (component-driven UI)  
-• Google Maps API for navigation  
-• Real-time Firestore listeners
+• HTML, CSS, and JavaScript for a lightweight, fast-loading interface  
+• Dynamic DOM updates driven by real-time database changes  
+• Map-based visualization for intuitive campus navigation
 
 Backend  
 • Firebase Authentication (RBAC)  
@@ -44,8 +44,7 @@ Backend
 ## Impact
 
 **Impact Metrics**
-
-• 500+ active users across campus  
+ 
 • 15 min → <2 min average search time  
 • Real-time updates across devices  
 • Scalable foundation for future modules

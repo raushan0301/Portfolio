@@ -27,6 +27,105 @@ export default function Hero({ name, tagline, subtitle, focus, github, linkedin,
                     transition={{ duration: 0.6 }}
                     className="max-w-4xl mx-auto text-center"
                 >
+                    {/* Profile Photo - 3D Flip on Hover */}
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.8, delay: 0.2 }}
+                        className="mb-8 flex justify-center"
+                    >
+                        <motion.div
+                            animate={{ y: [0, -8, 0] }}
+                            transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                            className="relative group"
+                            style={{ perspective: '1000px' }}
+                        >
+                            {/* Glow effect on hover */}
+                            <div className="absolute -inset-1 bg-gradient-to-r from-[var(--accent-primary)] to-[var(--accent-secondary)] rounded-2xl blur-lg opacity-0 group-hover:opacity-60 transition-opacity duration-500" />
+
+                            {/* Flip container */}
+                            <div
+                                className="flip-container relative w-[280px] h-[280px] cursor-pointer"
+                                style={{
+                                    transformStyle: 'preserve-3d',
+                                }}
+                                onMouseEnter={(e) => {
+                                    const front = e.currentTarget.querySelector('.flip-front') as HTMLElement;
+                                    const back = e.currentTarget.querySelector('.flip-back') as HTMLElement;
+                                    if (front && back) {
+                                        front.style.transform = 'rotateY(180deg)';
+                                        back.style.transform = 'rotateY(0deg)';
+                                    }
+                                }}
+                                onMouseLeave={(e) => {
+                                    const front = e.currentTarget.querySelector('.flip-front') as HTMLElement;
+                                    const back = e.currentTarget.querySelector('.flip-back') as HTMLElement;
+                                    if (front && back) {
+                                        front.style.transform = 'rotateY(0deg)';
+                                        back.style.transform = 'rotateY(-180deg)';
+                                    }
+                                }}
+                            >
+                                {/* Front side */}
+                                <div
+                                    className="flip-front absolute w-full h-full rounded-2xl overflow-hidden border-2 border-[var(--border-primary)] group-hover:border-[var(--accent-primary)]"
+                                    style={{
+                                        backfaceVisibility: 'hidden',
+                                        transform: 'rotateY(0deg)',
+                                        transition: 'transform 0.7s ease-in-out, border-color 0.3s',
+                                        transformStyle: 'preserve-3d',
+                                    }}
+                                >
+                                    <img
+                                        src="/profile.jpg"
+                                        alt="Raushan Raj"
+                                        className="w-full h-full object-cover"
+                                    />
+                                </div>
+
+                                {/* Back side (flipped) */}
+                                <div
+                                    className="flip-back absolute w-full h-full rounded-2xl overflow-hidden border-2 border-[var(--accent-primary)]"
+                                    style={{
+                                        backfaceVisibility: 'hidden',
+                                        transform: 'rotateY(-180deg)',
+                                        transition: 'transform 0.7s ease-in-out',
+                                        transformStyle: 'preserve-3d',
+                                    }}
+                                >
+                                    <img
+                                        src="/profile.jpg"
+                                        alt="Raushan Raj"
+                                        className="w-full h-full object-cover scale-110"
+                                    />
+                                    {/* Enhanced gradient overlay */}
+                                    <div className="absolute inset-0 bg-gradient-to-br from-[var(--accent-primary)]/40 to-[var(--accent-secondary)]/40 backdrop-blur-sm" />
+
+                                    {/* Hi with wave emoji */}
+                                    <div className="absolute inset-0 flex items-center justify-center">
+                                        <motion.div
+                                            initial={{ scale: 0 }}
+                                            animate={{ scale: 1 }}
+                                            transition={{ duration: 0.5, delay: 0.3 }}
+                                            className="text-center"
+                                        >
+                                            <h2 className="text-6xl font-bold text-white mb-2">
+                                                Hi
+                                            </h2>
+                                            <motion.span
+                                                animate={{ rotate: [0, 14, -8, 14, -4, 10, 0] }}
+                                                transition={{ duration: 1.5, repeat: Infinity, repeatDelay: 1 }}
+                                                className="text-7xl inline-block"
+                                            >
+                                                👋
+                                            </motion.span>
+                                        </motion.div>
+                                    </div>
+                                </div>
+                            </div>
+                        </motion.div>
+                    </motion.div>
+
                     {/* Name */}
                     <motion.h1
                         className="mb-6"
@@ -76,7 +175,7 @@ export default function Hero({ name, tagline, subtitle, focus, github, linkedin,
                     >
                         <a
                             href="#projects"
-                            className="button px-6 py-3 bg-[var(--accent-primary)] text-[var(--bg-primary)] font-medium rounded-lg hover:bg-[var(--accent-secondary)]"
+                            className="button px-6 py-3 border border-[var(--border-primary)] text-[var(--text-primary)] font-medium rounded-lg hover:border-[var(--accent-primary)] hover:text-[var(--accent-primary)] flex items-center gap-2"
                         >
                             View Projects
                         </a>
@@ -103,7 +202,8 @@ export default function Hero({ name, tagline, subtitle, focus, github, linkedin,
 
                         <a
                             href={resume}
-                            download
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className="button px-6 py-3 border border-[var(--border-primary)] text-[var(--text-primary)] font-medium rounded-lg hover:border-[var(--accent-primary)] hover:text-[var(--accent-primary)] flex items-center gap-2"
                         >
                             <FaFileDownload className="text-xl" />

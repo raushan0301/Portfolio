@@ -30,18 +30,6 @@
   --shadow-glow: 0 0 20px var(--accent-glow);
 }
 
-@theme inline {
-  --color-bg-primary: var(--bg-primary);
-  --color-bg-secondary: var(--bg-secondary);
-  --color-bg-tertiary: var(--bg-tertiary);
-  --color-text-primary: var(--text-primary);
-  --color-text-secondary: var(--text-secondary);
-  --color-text-tertiary: var(--text-tertiary);
-  --color-accent-primary: var(--accent-primary);
-  --color-accent-secondary: var(--accent-secondary);
-  --color-border-primary: var(--border-primary);
-  --color-border-secondary: var(--border-secondary);
-}
 
 * {
   margin: 0;
@@ -106,9 +94,11 @@ h5 {
 p {
   font-size: 16px;
   font-weight: 300;
-  line-height: 1.8; /* Increased from 1.7 for better readability */
+  line-height: 1.8;
+  /* Increased from 1.7 for better readability */
   color: var(--text-secondary);
-  margin-bottom: 18px; /* Slightly increased spacing */
+  margin-bottom: 18px;
+  /* Slightly increased spacing */
 }
 
 small {
@@ -129,18 +119,22 @@ small {
 }
 
 #skills {
-  /* Lighter background - softer feel */
-  background: var(--bg-primary);
+  /* Transparent - let video background show through */
+  background: transparent;
 }
 
 #skills .card {
-  background: rgba(26, 26, 26, 0.5); /* Lighter than default */
+  /* background: rgba(26, 26, 26, 0.5); */
+
+  background: var(--bg-secondary);
+  /* Lighter than default */
   border-color: rgba(38, 38, 38, 0.6);
 }
 
 #experience {
   /* Medium contrast */
-  background: var(--bg-primary);
+  /* background: var(--bg-primary); */
+  background: transparent;
 }
 
 #experience .card {
