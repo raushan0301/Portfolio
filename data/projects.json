@@ -24,30 +24,30 @@
     {
         "id": "cryptocrafters",
         "title": "CryptoCrafters",
-        "tagline": "Market Analysis & Price Prediction Platform",
+        "tagline": "ML-Powered 10-Day Market Forecasting Dashboard",
         "category": "Full Stack Web Application",
         "tech": [
             "React",
             "Supabase",
             "PostgreSQL",
-            "ML-based Predictions",
-            "Chart.js",
-            "REST APIs"
+            "ML Integration",
+            "Recharts",
+            "React Router"
         ],
-        "year": "2024",
+        "year": "2025",
         "featured": false,
         "links": {
             "live": "https://cryptocrafters.netlify.app",
-            "github": "https://github.com/raushanraj/cryptocrafters"
+            "github": "https://github.com/raushan0301/CryptoCrafters"
         },
         "image": "/projects/cryptocrafters.png",
-        "shortDescription": "Real-time crypto market insights with ML-based price predictions and interactive visualizations.",
+        "shortDescription": "Visualize 10-day market predictions using Machine Learning with real-time sentiment analysis and charting.",
         "detailsFile": "cryptocrafters.md"
     },
     {
         "id": "transport-management",
         "title": "Transport Management System",
-        "tagline": "Integrated Media Management Solution",
+        "tagline": "Enterprise Vehicle Booking & Approval System",
         "category": "Full Stack Web Application",
         "tech": [
             "React",
@@ -56,13 +56,11 @@
             "Cloudinary",
             "Express"
         ],
-        "year": "2024",
+        "year": "2025",
         "featured": false,
-        "links": {
-            "github": "https://github.com/raushanraj/transport-management"
-        },
+        "links": {},
         "image": "/projects/transport.png",
-        "shortDescription": "Streamlines transport operations with integrated media management and file handling.",
+        "shortDescription": "A robust, multi-role workflow system for automated campus vehicle assignments and hierarchical approvals.",
         "detailsFile": "transport-management.md"
     }
 ]

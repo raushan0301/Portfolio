@@ -79,6 +79,8 @@ export default function Hero({ name, tagline, subtitle, focus, github, linkedin,
                                     <img
                                         src="/profile.jpg"
                                         alt="Raushan Raj"
+                                        width={280}
+                                        height={280}
                                         className="w-full h-full object-cover"
                                     />
                                 </div>
@@ -96,6 +98,8 @@ export default function Hero({ name, tagline, subtitle, focus, github, linkedin,
                                     <img
                                         src="/profile.jpg"
                                         alt="Raushan Raj"
+                                        width={280}
+                                        height={280}
                                         className="w-full h-full object-cover scale-110"
                                     />
                                     {/* Enhanced gradient overlay */}

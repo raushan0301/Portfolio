@@ -1,7 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  // Disable webpack in favor of turbopack
+  // Using webpack due to Turbopack permission issues with Downloads folder
 };
 
 export default nextConfig;
