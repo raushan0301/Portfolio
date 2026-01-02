@@ -6,10 +6,30 @@ export const metadata: Metadata = {
   description: "Computer Engineering student at Thapar Institute specializing in full-stack web development and cybersecurity. Building secure, scalable systems with React, Next.js, Firebase, and PostgreSQL.",
   keywords: ["Full Stack Developer", "Cybersecurity", "Web Development", "React", "Next.js", "Firebase", "PostgreSQL", "Ethical Hacking", "Computer Engineering"],
   authors: [{ name: "Raushan Raj" }],
+  icons: {
+    icon: '/profile.jpg',
+    shortcut: '/profile.jpg',
+    apple: '/profile.jpg',
+  },
   openGraph: {
     title: "Raushan Raj | Full Stack Developer & Cybersecurity Enthusiast",
     description: "Building secure, scalable web systems with a security-first mindset",
     type: "website",
+    url: "https://raushanraj.vercel.app",
+    images: [
+      {
+        url: '/profile.jpg',
+        width: 800,
+        height: 800,
+        alt: 'Raushan Raj - Full Stack Developer',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary',
+    title: "Raushan Raj | Full Stack Developer & Cybersecurity Enthusiast",
+    description: "Building secure, scalable web systems with a security-first mindset",
+    images: ['/profile.jpg'],
   },
 };
 
