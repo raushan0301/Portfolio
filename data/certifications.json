@@ -3,53 +3,23 @@
         "id": "cert-1",
         "title": "The Complete Full-Stack Web Development Bootcamp",
         "issuer": "Udemy - Dr. Angela Yu",
-        "date": "October 2024",
+        "date": "December 2025",
         "category": "Web Development",
         "description": "Comprehensive full-stack development course covering frontend, backend, databases, and deployment",
-        "certificateUrl": "#",
+        "certificateUrl": "https://www.udemy.com/certificate/UC-db8c0aec-e3ee-4017-852a-22e7231043b3/",
         "skills": [
             "React",
             "Node.js",
             "Express",
             "PostgreSQL",
-            "MongoDB",
             "REST APIs"
         ]
     },
     {
         "id": "cert-2",
-        "title": "Postman API Fundamentals Student Expert",
-        "issuer": "Postman",
-        "date": "September 2024",
-        "category": "Web Development",
-        "description": "API testing, documentation, and development fundamentals",
-        "certificateUrl": "#",
-        "skills": [
-            "REST APIs",
-            "API Testing",
-            "Postman",
-            "API Documentation"
-        ]
-    },
-    {
-        "id": "cert-3",
-        "title": "Foundations of Cybersecurity",
-        "issuer": "Google",
-        "date": "April 2024",
-        "category": "Cybersecurity",
-        "description": "Core cybersecurity concepts, threats, and security frameworks",
-        "certificateUrl": "#",
-        "skills": [
-            "Security Fundamentals",
-            "Threat Analysis",
-            "Security Frameworks"
-        ]
-    },
-    {
-        "id": "cert-4",
         "title": "EC-Council CEH v13 Labs",
         "issuer": "EC-Council (In Progress)",
-        "date": "2024 - Present",
+        "date": "2025 - Present",
         "category": "Cybersecurity",
         "description": "Hands-on ethical hacking labs covering penetration testing and vulnerability assessment",
         "skills": [
@@ -59,10 +29,10 @@
         ]
     },
     {
-        "id": "cert-5",
+        "id": "cert-3",
         "title": "EC-Council CND v3 Labs",
         "issuer": "EC-Council (In Progress)",
-        "date": "2024 - Present",
+        "date": "2025 - Present",
         "category": "Cybersecurity",
         "description": "Certified Network Defender labs focusing on network security and defense strategies",
         "skills": [

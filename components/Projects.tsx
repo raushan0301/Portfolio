@@ -5,6 +5,7 @@ import { useInView } from 'framer-motion';
 import { useRef, useState } from 'react';
 import { FaGithub, FaExternalLinkAlt, FaTimes, FaStar } from 'react-icons/fa';
 import ReactMarkdown from 'react-markdown';
+import rehypeSanitize from 'rehype-sanitize';
 import Image from 'next/image';
 
 interface Project {
@@ -235,6 +236,7 @@ export default function Projects({ projects, projectDetails }: ProjectsProps) {
                         <div className="overflow-y-auto px-8 py-8">
                             <div className="prose prose-invert max-w-none">
                                 <ReactMarkdown
+                                    rehypePlugins={[rehypeSanitize]}
                                     components={{
                                         h2: ({ children }) => {
                                             const text = String(children);

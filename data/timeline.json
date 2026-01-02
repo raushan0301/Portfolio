@@ -1,57 +1,86 @@
 [
     {
-        "id": "learning-phase",
+        "id": "college-start",
         "year": "2023",
-        "title": "Foundation Building",
-        "description": "Started journey in web development and programming fundamentals",
+        "title": "College Journey Begins",
+        "description": "Started Computer Engineering at Thapar Institute of Engineering & Technology",
         "milestones": [
-            "Learned HTML, CSS, and JavaScript",
-            "Completed Full Stack Web Development Bootcamp",
-            "Built first web applications"
+            "Joined Paryavaran Welfare Society as Member",
+            "Became part of TEDxTIET community",
+            "Started learning programming fundamentals"
         ]
     },
     {
-        "id": "project-phase",
+        "id": "leadership-emergence",
         "year": "2024 Q1-Q2",
-        "title": "Project Development",
-        "description": "Applied skills to build production-oriented applications",
+        "title": "Leadership & Technical Exploration",
+        "description": "Stepped into core roles while exploring web development and cybersecurity",
         "milestones": [
-            "Developed SnapLocate campus navigation platform",
-            "Built CryptoCrafters analysis application",
-            "Learned React, Next.js, and Firebase"
+            "Promoted to CORE at Paryavaran Welfare Society",
+            "Joined Energy Conservation Club as Member",
+            "Started exploring web development technologies",
+            "Began researching cybersecurity fundamentals"
         ]
     },
     {
-        "id": "internship-phase",
+        "id": "dual-discovery",
         "year": "2024 Q3",
-        "title": "Professional Experience",
-        "description": "Gained industry experience through internship",
+        "title": "Discovering Dual Passions",
+        "description": "Found interest in both web development and cybersecurity domains",
         "milestones": [
-            "C/C++ Development Internship",
-            "Systems-level programming exposure",
-            "Professional code review practices"
+            "Started exploring cybersecurity - what it is and why it matters",
+            "Researched career growth in ethical hacking and secure development",
+            "Understood how security skills can protect and help people",
+            "Became Head of Logistics at Paryavaran Welfare Society",
+            "Promoted to Core Member at TEDxTIET and Energy Conservation Club"
         ]
     },
     {
-        "id": "security-phase",
-        "year": "2024 Q4",
-        "title": "Security Focus",
-        "description": "Expanded expertise into cybersecurity domain",
+        "id": "webdev-bootcamp",
+        "year": "2025 Q1",
+        "title": "Full-Stack Development Journey",
+        "description": "Committed to mastering full-stack web development with comprehensive training",
         "milestones": [
-            "Completed Mastercard Security Simulation",
-            "Studied security fundamentals and threat analysis",
-            "Integrated security practices into development workflow"
+            "Purchased and started Full-Stack Web Development Bootcamp (Dr. Angela Yu)",
+            "Learning React, Node.js, databases, and modern web technologies",
+            "Building foundation for creating production-grade applications",
+            "Appointed Joint Secretary at Paryavaran Welfare Society"
         ]
     },
     {
-        "id": "current-phase",
-        "year": "2025",
-        "title": "Dual Specialization",
-        "description": "Pursuing expertise in both development and security",
+        "id": "ethical-hacking-start",
+        "year": "2025 Q2",
+        "title": "Formal Cybersecurity Training",
+        "description": "Enrolled in ethical hacking course and gained hands-on lab access",
         "milestones": [
-            "Building secure, scalable applications",
-            "Deepening cybersecurity knowledge",
-            "Preparing for industry roles"
+            "Enrolled in 'Ethical Hacking & Cybersecurity' elective",
+            "Gained access to EC-Council CEH v13 and CND v3 Labs",
+            "Built and launched SnapLocate - Live Campus Platform",
+            "Applied full-stack skills to solve real campus problems"
+        ]
+    },
+    {
+        "id": "production-projects",
+        "year": "2025 Q3-Q4",
+        "title": "Building Production Systems",
+        "description": "Developed multiple full-stack applications while advancing security expertise",
+        "milestones": [
+            "Built CryptoCrafters ML prediction dashboard with React and Supabase",
+            "Started Transport Management System with complex RBAC workflows",
+            "Actively practicing penetration testing in EC-Council labs",
+            "Integrating security-first mindset into all development projects"
+        ]
+    },
+    {
+        "id": "current-focus",
+        "year": "2025 Q4 - Present",
+        "title": "Full-Stack Security Specialist",
+        "description": "Merging development and security expertise to build secure, scalable systems",
+        "milestones": [
+            "Completed Full-Stack Web Development Bootcamp",
+            "Ongoing: Transport Management System development",
+            "Ongoing: EC-Council CEH v13 and CND v3 Labs practice",
+            "Preparing for roles in secure full-stack development"
         ]
     }
 ]

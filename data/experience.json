@@ -1,43 +1,83 @@
 [
     {
-        "id": "cpp-intern",
-        "title": "C/C++ Development Intern",
-        "company": "Tech Company",
-        "location": "Remote",
-        "period": "Summer 2024",
-        "type": "Internship",
-        "description": "Worked on systems-level programming projects, focusing on performance optimization and code quality.",
+        "id": "paryavaran-joint-secretary",
+        "title": "Joint Secretary",
+        "company": "Paryavaran Welfare Society",
+        "location": "Thapar Institute of Engineering & Technology",
+        "period": "Sep 2025 - Present",
+        "type": "Leadership",
+        "description": "Leading organizational operations and strategic initiatives for environmental welfare activities at TIET.",
         "responsibilities": [
-            "Developed and optimized C++ modules for core system functionality",
-            "Implemented efficient algorithms for data processing",
-            "Collaborated with senior developers on code reviews",
-            "Debugged and resolved complex memory management issues"
+            "Oversee organizational operations and strategic planning",
+            "Coordinate cross-functional teams for environmental initiatives",
+            "Manage Team relationships and partnerships",
+            "Drive sustainability projects across campus"
         ],
         "technologies": [
-            "C++",
-            "C",
-            "Git",
-            "Linux"
+            "Team Leadership",
+            "Strategic Planning",
+            "Project Management"
         ]
     },
     {
-        "id": "mastercard-security",
-        "title": "Security Awareness Simulation",
-        "company": "Mastercard (Forage)",
-        "location": "Virtual Experience",
-        "period": "2024",
-        "type": "Learning",
-        "description": "Completed hands-on cybersecurity simulation focusing on phishing awareness and security protocols.",
+        "id": "paryavaran-logistics",
+        "title": "Head of Logistics",
+        "company": "Paryavaran Welfare Society",
+        "location": "Thapar Institute of Engineering & Technology",
+        "period": "Oct 2024 - Sep 2025",
+        "type": "Leadership",
+        "description": "Managed end-to-end logistics operations for large-scale environmental events and campaigns.",
         "responsibilities": [
-            "Analyzed phishing email patterns and social engineering tactics",
-            "Designed security awareness training materials",
-            "Evaluated security vulnerabilities in communication systems",
-            "Developed strategies for improving organizational security posture"
+            "Coordinated logistics for 10+ major environmental events",
+            "Managed distribution and resource allocation across campus",
+            "Led a team of volunteers for event execution",
+            "Optimized supply chain processes for sustainability initiatives"
         ],
         "technologies": [
-            "Security Awareness",
-            "Phishing Analysis",
-            "Risk Assessment"
+            "Distribution Handling",
+            "Logistics Management",
+            "Event Management",
+            "Team Management"
+        ]
+    },
+    {
+        "id": "tedxtiet-core",
+        "title": "Core Member",
+        "company": "TEDxTIET",
+        "location": "Thapar Institute of Engineering & Technology",
+        "period": "Sep 2024 - Dec 2025",
+        "type": "Leadership",
+        "description": "Contributing to the organization and execution of TEDx events, managing logistics and creative operations.",
+        "responsibilities": [
+            "Coordinate logistics for TEDx events and speaker sessions",
+            "Collaborate on creative content and event branding",
+            "Manage event operations and attendee experience",
+            "Support team in delivering high-impact talks and experiences"
+        ],
+        "technologies": [
+            "Logistics Management",
+            "Creativity Skills",
+            "Event Coordination"
+        ]
+    },
+    {
+        "id": "energy-conservation-core",
+        "title": "Core Member",
+        "company": "Energy Conservation Club",
+        "location": "Thapar Institute of Engineering & Technology",
+        "period": "Nov 2024 - May 2025",
+        "type": "Leadership",
+        "description": "Driving energy conservation awareness and sustainable practices across the campus community.",
+        "responsibilities": [
+            "Lead energy conservation awareness campaigns",
+            "Organize workshops on sustainable practices",
+            "Collaborate with campus administration on green initiatives",
+            "Monitor and promote energy-efficient solutions"
+        ],
+        "technologies": [
+            "Sustainability",
+            "Campaign Management",
+            "Community Engagement"
         ]
     }
 ]
