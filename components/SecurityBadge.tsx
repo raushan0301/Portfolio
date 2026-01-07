@@ -23,7 +23,7 @@ export default function SecurityBadge() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 1.2 }}
-            className="fixed bottom-24 left-8 z-40"
+            className="hidden sm:block fixed bottom-8 left-8 z-50"
         >
             <div
                 className="relative"
@@ -76,7 +76,7 @@ export default function SecurityBadge() {
                             </p>
                         </div>
 
-                        <div className="space-y-2">
+                        <div className="flex flex-col gap-2">
                             {securityFeatures.map((feature, index) => (
                                 <motion.div
                                     key={feature.name}

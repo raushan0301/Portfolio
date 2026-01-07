@@ -8,7 +8,7 @@ export default function AvailableBadge() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 1 }}
-            className="fixed bottom-8 right-8 z-50"
+            className="hidden sm:block fixed bottom-8 right-8 z-50"
         >
             <div
                 className="flex flex-col items-center gap-2 bg-[var(--bg-primary)]/90 backdrop-blur-xl border border-green-500/30 rounded-2xl shadow-2xl"

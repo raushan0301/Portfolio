@@ -18,7 +18,7 @@ interface TimelineProps {
 
 export default function Timeline({ events }: TimelineProps) {
     const ref = useRef(null);
-    const isInView = useInView(ref, { once: true, margin: "-100px" });
+    const isInView = useInView(ref, { margin: "0px", amount: 0.2 });
 
     return (
         <section id="timeline" className="section-spacing">
@@ -36,9 +36,9 @@ export default function Timeline({ events }: TimelineProps) {
 
                     <div className="relative">
                         {/* Timeline line */}
-                        <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-[var(--border-primary)] transform md:-translate-x-1/2" />
+                        <div className="absolute left-2 sm:left-0 md:left-1/2 top-0 bottom-0 w-px bg-[var(--border-primary)] transform md:-translate-x-1/2" />
 
-                        <div className="space-y-16">
+                        <div className="flex flex-col gap-12 sm:gap-16 md:gap-20">
                             {events.map((event, index) => (
                                 <motion.div
                                     key={event.id}
@@ -49,24 +49,24 @@ export default function Timeline({ events }: TimelineProps) {
                                         } flex-col md:gap-8`}
                                 >
                                     {/* Timeline dot */}
-                                    <div className="absolute left-0 md:left-1/2 w-4 h-4 bg-[var(--accent-primary)] rounded-full transform md:-translate-x-1/2 border-4 border-[var(--bg-primary)] z-10" />
+                                    <div className="absolute left-2 sm:left-0 md:left-1/2 w-3 h-3 sm:w-4 sm:h-4 bg-[var(--accent-primary)] rounded-full transform md:-translate-x-1/2 border-2 sm:border-4 border-[var(--bg-primary)] z-10" />
 
                                     {/* Content */}
-                                    <div className={`flex-1 ml-8 md:ml-0 ${index % 2 === 0 ? 'md:text-left md:pr-12' : 'md:pl-12'}`}>
+                                    <div className={`flex-1 ml-6 sm:ml-8 md:ml-0 ${index % 2 === 0 ? 'md:text-left md:pr-12' : 'md:pl-12'}`}>
                                         <div className="card">
-                                            <div className="flex items-center gap-3 mb-3">
-                                                <span className="text-sm font-semibold text-[var(--accent-primary)] bg-[var(--bg-secondary)] px-3 py-1 rounded">
+                                            <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3 mb-2 sm:mb-3">
+                                                <span className="text-xs sm:text-sm font-semibold text-[var(--accent-primary)] bg-[var(--bg-secondary)] px-2 sm:px-3 py-1 rounded w-fit">
                                                     {event.year}
                                                 </span>
-                                                <h3 className="text-xl font-bold text-[var(--text-primary)]">
+                                                <h3 className="text-lg sm:text-xl font-bold text-[var(--text-primary)]">
                                                     {event.title}
                                                 </h3>
                                             </div>
-                                            <p className="text-[var(--text-secondary)] mb-4">{event.description}</p>
-                                            <ul className="space-y-2">
+                                            <p className="text-xs sm:text-sm md:text-base text-[var(--text-secondary)] mb-3 sm:mb-4">{event.description}</p>
+                                            <ul className="flex flex-col gap-1.5 sm:gap-2">
                                                 {event.milestones.slice(0, 3).map((milestone, idx) => (
-                                                    <li key={idx} className="text-sm text-[var(--text-secondary)] flex items-start">
-                                                        <span className="text-[var(--accent-primary)] mr-2">✓</span>
+                                                    <li key={idx} className="text-xs sm:text-sm text-[var(--text-secondary)] flex items-start">
+                                                        <span className="text-[var(--accent-primary)] mr-1.5 sm:mr-2">✓</span>
                                                         <span>{milestone}</span>
                                                     </li>
                                                 ))}

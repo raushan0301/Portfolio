@@ -23,7 +23,7 @@ interface ExperienceProps {
 
 export default function Experience({ experiences }: ExperienceProps) {
     const ref = useRef(null);
-    const isInView = useInView(ref, { once: true, margin: "-100px" });
+    const isInView = useInView(ref, { margin: "0px", amount: 0.2 });
 
     const getTypeIcon = (type: string) => {
         if (type.toLowerCase().includes('learning')) {
@@ -48,7 +48,7 @@ export default function Experience({ experiences }: ExperienceProps) {
                     </div>
 
                     {/* Increased gap between cards from gap-8 to gap-10 */}
-                    <div className="flex flex-col gap-10">
+                    <div className="flex flex-col gap-6 sm:gap-8 md:gap-10">
                         {experiences.map((exp, index) => (
                             <motion.div
                                 key={exp.id}
@@ -59,45 +59,45 @@ export default function Experience({ experiences }: ExperienceProps) {
                                 style={{ paddingTop: '20px', paddingBottom: '20px' }}
                             >
                                 {/* Role Title - Largest, Most Dominant */}
-                                <h3 className="text-2xl font-bold text-[var(--text-primary)] mb-2 leading-tight">
+                                <h3 className="text-xl sm:text-2xl font-bold text-[var(--text-primary)] mb-2 leading-tight">
                                     {exp.title}
                                 </h3>
 
                                 {/* Meta Info - All Together, Muted, Single Line */}
-                                <div className="flex flex-wrap items-center gap-2 mb-3">
-                                    <span className="text-sm font-medium text-[var(--accent-primary)]">
+                                <div className="flex flex-wrap items-center gap-1.5 sm:gap-2 mb-2 sm:mb-3">
+                                    <span className="text-xs sm:text-sm font-medium text-[var(--accent-primary)]">
                                         {exp.company}
                                     </span>
-                                    <span className="text-xs text-[var(--text-tertiary)] opacity-60">•</span>
-                                    <span className="text-xs text-[var(--text-tertiary)] opacity-70">
+                                    <span className="text-[10px] sm:text-xs text-[var(--text-tertiary)] opacity-60">•</span>
+                                    <span className="text-[10px] sm:text-xs text-[var(--text-tertiary)] opacity-70">
                                         {exp.location}
                                     </span>
-                                    <span className="text-xs text-[var(--text-tertiary)] opacity-60">•</span>
-                                    <span className="text-xs text-[var(--text-tertiary)] opacity-70">
+                                    <span className="text-[10px] sm:text-xs text-[var(--text-tertiary)] opacity-60">•</span>
+                                    <span className="text-[10px] sm:text-xs text-[var(--text-tertiary)] opacity-70">
                                         {exp.period}
                                     </span>
-                                    <span className="text-xs text-[var(--text-tertiary)] opacity-60">•</span>
-                                    <span className="inline-flex items-center gap-1.5 text-xs px-2 py-0.5 bg-[var(--bg-secondary)] border border-[var(--border-secondary)] rounded-full text-[var(--text-tertiary)] opacity-70">
+                                    <span className="text-[10px] sm:text-xs text-[var(--text-tertiary)] opacity-60">•</span>
+                                    <span className="inline-flex items-center gap-1 sm:gap-1.5 text-[10px] sm:text-xs px-1.5 sm:px-2 py-0.5 bg-[var(--bg-secondary)] border border-[var(--border-secondary)] rounded-full text-[var(--text-tertiary)] opacity-70">
                                         {getTypeIcon(exp.type)}
                                         {exp.type}
                                     </span>
                                 </div>
 
                                 {/* One-line Summary - Higher Contrast, Italic */}
-                                <p className="text-sm text-[var(--text-primary)] italic leading-relaxed mb-4 opacity-85 font-medium">
+                                <p className="text-xs sm:text-sm text-[var(--text-primary)] italic leading-relaxed mb-3 sm:mb-4 opacity-85 font-medium">
                                     {exp.description}
                                 </p>
 
                                 {/* Key Responsibilities - Smaller Heading */}
-                                <div className="mb-4">
+                                <div className="mb-3 sm:mb-4">
                                     <h4 className="text-xs font-semibold text-[var(--text-primary)] uppercase tracking-wide mb-2 opacity-70">
                                         Key Responsibilities
                                     </h4>
                                     {/* Compact Bullets - Reduced size and contrast */}
-                                    <ul className="space-y-1.5">
+                                    <ul className="flex flex-col gap-1 sm:gap-1.5">
                                         {exp.responsibilities.slice(0, 4).map((resp, idx) => (
-                                            <li key={idx} className="text-sm text-[var(--text-secondary)] flex items-start opacity-75">
-                                                <span className="text-[var(--accent-primary)] mr-2 mt-0.5 text-xs opacity-60">•</span>
+                                            <li key={idx} className="text-xs sm:text-sm text-[var(--text-secondary)] flex items-start opacity-75">
+                                                <span className="text-[var(--accent-primary)] mr-1.5 sm:mr-2 mt-0.5 text-[10px] sm:text-xs opacity-60">•</span>
                                                 <span className="leading-relaxed">{resp}</span>
                                             </li>
                                         ))}
@@ -105,12 +105,12 @@ export default function Experience({ experiences }: ExperienceProps) {
                                 </div>
 
                                 {/* Tech Stack - More Visible */}
-                                <div className="pt-3 border-t border-[var(--border-primary)]">
-                                    <div className="flex flex-wrap gap-2">
+                                <div className="pt-2 sm:pt-3 border-t border-[var(--border-primary)]">
+                                    <div className="flex flex-wrap gap-1.5 sm:gap-2">
                                         {exp.technologies.map((tech, idx) => (
                                             <span
                                                 key={idx}
-                                                className="text-xs px-3 py-1.5 bg-[var(--bg-secondary)] border border-[var(--border-secondary)] rounded-full text-[var(--text-primary)] font-medium hover:bg-[var(--accent-primary)]/10 hover:border-[var(--accent-primary)] transition-all"
+                                                className="text-[10px] sm:text-xs px-2 sm:px-3 py-1 sm:py-1.5 bg-[var(--bg-secondary)] border border-[var(--border-secondary)] rounded-full text-[var(--text-primary)] font-medium hover:bg-[var(--accent-primary)]/10 hover:border-[var(--accent-primary)] transition-all"
                                             >
                                                 {tech}
                                             </span>

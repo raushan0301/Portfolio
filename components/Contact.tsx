@@ -14,7 +14,7 @@ interface ContactProps {
 
 export default function Contact({ email, github, linkedin }: ContactProps) {
     const ref = useRef(null);
-    const isInView = useInView(ref, { once: true, margin: "-100px" });
+    const isInView = useInView(ref, { margin: "0px", amount: 0.2 });
 
     return (
         <section id="contact" className="section-spacing bg-[var(--bg-secondary)]">
@@ -31,17 +31,17 @@ export default function Contact({ email, github, linkedin }: ContactProps) {
                         <div className="section-underline-center" />
                     </div>
 
-                    <p className="text-lg text-[var(--text-secondary)] mb-12">
+                    <p className="text-sm sm:text-base md:text-lg text-[var(--text-secondary)] mb-8 sm:mb-12 px-4">
                         I'm currently looking for opportunities in full-stack development and cybersecurity roles.
                         Whether you have a question or just want to connect, feel free to reach out.
                     </p>
 
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+                    <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mb-8 sm:mb-12 px-4">
                         <a
                             href={`mailto:${email}`}
-                            className="px-10 py-5 border border-[var(--border-primary)] text-[var(--text-primary)] font-medium rounded-lg hover:border-[var(--accent-primary)] hover:text-[var(--accent-primary)] transition-colors flex items-center justify-center gap-2"
+                            className="px-5 sm:px-6 md:px-10 py-3 sm:py-4 md:py-5 border border-[var(--border-primary)] text-[var(--text-primary)] font-medium rounded-lg hover:border-[var(--accent-primary)] hover:text-[var(--accent-primary)] transition-colors flex items-center justify-center gap-2 text-sm sm:text-base"
                         >
-                            <FaEnvelope className="text-xl" />
+                            <FaEnvelope className="text-lg sm:text-xl" />
                             Send Email
                         </a>
 
@@ -49,9 +49,9 @@ export default function Contact({ email, github, linkedin }: ContactProps) {
                             href={linkedin}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="px-10 py-5 border border-[var(--border-primary)] text-[var(--text-primary)] font-medium rounded-lg hover:border-[var(--accent-primary)] hover:text-[var(--accent-primary)] transition-colors flex items-center justify-center gap-2"
+                            className="px-5 sm:px-6 md:px-10 py-3 sm:py-4 md:py-5 border border-[var(--border-primary)] text-[var(--text-primary)] font-medium rounded-lg hover:border-[var(--accent-primary)] hover:text-[var(--accent-primary)] transition-colors flex items-center justify-center gap-2 text-sm sm:text-base"
                         >
-                            <FaLinkedin className="text-xl" />
+                            <FaLinkedin className="text-lg sm:text-xl" />
                             LinkedIn
                         </Link>
 
@@ -59,9 +59,9 @@ export default function Contact({ email, github, linkedin }: ContactProps) {
                             href={github}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="px-10 py-5 border border-[var(--border-primary)] text-[var(--text-primary)] font-medium rounded-lg hover:border-[var(--accent-primary)] hover:text-[var(--accent-primary)] transition-colors flex items-center justify-center gap-2"
+                            className="px-5 sm:px-6 md:px-10 py-3 sm:py-4 md:py-5 border border-[var(--border-primary)] text-[var(--text-primary)] font-medium rounded-lg hover:border-[var(--accent-primary)] hover:text-[var(--accent-primary)] transition-colors flex items-center justify-center gap-2 text-sm sm:text-base"
                         >
-                            <FaGithub className="text-xl" />
+                            <FaGithub className="text-lg sm:text-xl" />
                             GitHub
                         </Link>
                     </div>

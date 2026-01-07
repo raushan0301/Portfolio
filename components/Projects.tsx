@@ -32,7 +32,7 @@ interface ProjectsProps {
 
 export default function Projects({ projects, projectDetails }: ProjectsProps) {
     const ref = useRef(null);
-    const isInView = useInView(ref, { once: true, margin: "-100px" });
+    const isInView = useInView(ref, { margin: "0px", amount: 0.2 });
     const [selectedProject, setSelectedProject] = useState<Project | null>(null);
     const [activeTab, setActiveTab] = useState<'summary' | 'engineering' | 'impact'>('summary');
 
@@ -57,7 +57,7 @@ export default function Projects({ projects, projectDetails }: ProjectsProps) {
                             <div className="section-underline" />
                         </div>
 
-                        <div className="grid md:grid-cols-2 gap-6">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                             {projects.map((project, index) => (
                                 <motion.div
                                     key={project.id}
@@ -79,7 +79,7 @@ export default function Projects({ projects, projectDetails }: ProjectsProps) {
                                     )}
 
                                     {/* Project Image - Reduced height for featured */}
-                                    <div className={`-mx-14 -mt-14 mb-8 bg-gradient-to-br from-[var(--bg-secondary)] to-[var(--bg-tertiary)] flex items-center justify-center border-b border-[var(--border-primary)] overflow-hidden relative ${project.featured ? 'h-40' : 'h-48'
+                                    <div className={`-mx-4 sm:-mx-6 -mt-4 sm:-mt-6 mb-4 sm:mb-6 bg-gradient-to-br from-[var(--bg-secondary)] to-[var(--bg-tertiary)] flex items-center justify-center border-b border-[var(--border-primary)] overflow-hidden relative ${project.featured ? 'h-28 sm:h-32 md:h-40' : 'h-32 sm:h-40 md:h-48'
                                         }`}>
                                         {project.image ? (
                                             <Image
@@ -98,30 +98,30 @@ export default function Projects({ projects, projectDetails }: ProjectsProps) {
                                     {/* Content - No 2-column for featured */}
                                     <div>
                                         {/* Meta row */}
-                                        <div className="flex items-center gap-3 mb-5 text-xs text-[var(--text-tertiary)]">
+                                        <div className="flex flex-wrap items-center gap-2 sm:gap-3 mb-3 sm:mb-5 text-[10px] sm:text-xs text-[var(--text-tertiary)]">
                                             <span>{project.year}</span>
                                             <span>•</span>
                                             <span>{project.category}</span>
                                         </div>
 
                                         {/* Title */}
-                                        <h3 className={`font-bold text-[var(--text-primary)] group-hover:text-[var(--accent-primary)] transition-colors mb-3 ${project.featured ? 'text-3xl' : 'text-2xl'
+                                        <h3 className={`font-bold text-[var(--text-primary)] group-hover:text-[var(--accent-primary)] transition-colors mb-2 sm:mb-3 ${project.featured ? 'text-xl sm:text-2xl md:text-3xl' : 'text-lg sm:text-xl md:text-2xl'
                                             }`}>
                                             {project.title}
                                         </h3>
-                                        <p className="text-sm text-[var(--text-tertiary)] mb-4">{project.tagline}</p>
+                                        <p className="text-xs sm:text-sm text-[var(--text-tertiary)] mb-3 sm:mb-4">{project.tagline}</p>
 
                                         {/* Description - Capped at 2 lines */}
-                                        <p className="text-[var(--text-secondary)] mb-4 leading-relaxed line-clamp-2">
+                                        <p className="text-sm md:text-base text-[var(--text-secondary)] mb-4 leading-relaxed line-clamp-2">
                                             {project.shortDescription}
                                         </p>
 
                                         {/* Tech Stack - Consistent across all cards */}
-                                        <div className="flex flex-wrap gap-2 mb-4">
+                                        <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-3 sm:mb-4">
                                             {project.tech.slice(0, 5).map((tech, idx) => (
                                                 <span
                                                     key={idx}
-                                                    className="text-xs px-2.5 py-1 bg-[var(--bg-secondary)] border border-[var(--border-secondary)] rounded text-[var(--text-secondary)] opacity-80"
+                                                    className="text-[10px] sm:text-xs px-2 sm:px-2.5 py-0.5 sm:py-1 bg-[var(--bg-secondary)] border border-[var(--border-secondary)] rounded text-[var(--text-secondary)] opacity-80"
                                                 >
                                                     {tech}
                                                 </span>
@@ -134,16 +134,16 @@ export default function Projects({ projects, projectDetails }: ProjectsProps) {
                                         </div>
 
                                         {/* Links - Clear Hierarchy */}
-                                        <div className="flex gap-4 pt-4 border-t border-[var(--border-secondary)]">
+                                        <div className="flex flex-wrap gap-3 sm:gap-4 pt-3 sm:pt-4 border-t border-[var(--border-secondary)]">
                                             {project.links.live && (
                                                 <a
                                                     href={project.links.live}
                                                     target="_blank"
                                                     rel="noopener noreferrer"
                                                     onClick={(e) => e.stopPropagation()}
-                                                    className="text-sm font-medium text-[var(--accent-primary)] hover:text-[var(--accent-secondary)] flex items-center gap-2 transition-all hover:gap-3 group/link"
+                                                    className="text-xs sm:text-sm font-medium text-[var(--accent-primary)] hover:text-[var(--accent-secondary)] flex items-center gap-1.5 sm:gap-2 transition-all hover:gap-3 group/link"
                                                 >
-                                                    <FaExternalLinkAlt className="text-base" />
+                                                    <FaExternalLinkAlt className="text-sm sm:text-base" />
                                                     <span className="group-hover/link:underline underline-offset-4">Live Demo</span>
                                                 </a>
                                             )}
@@ -153,9 +153,9 @@ export default function Projects({ projects, projectDetails }: ProjectsProps) {
                                                     target="_blank"
                                                     rel="noopener noreferrer"
                                                     onClick={(e) => e.stopPropagation()}
-                                                    className="text-sm text-[var(--text-secondary)] opacity-70 hover:text-[var(--accent-primary)] hover:opacity-100 flex items-center gap-2 transition-all hover:gap-3 group/link"
+                                                    className="text-xs sm:text-sm text-[var(--text-secondary)] opacity-70 hover:text-[var(--accent-primary)] hover:opacity-100 flex items-center gap-1.5 sm:gap-2 transition-all hover:gap-3 group/link"
                                                 >
-                                                    <FaGithub className="text-base" />
+                                                    <FaGithub className="text-sm sm:text-base" />
                                                     <span className="group-hover/link:underline underline-offset-4">Source Code</span>
                                                 </a>
                                             )}
@@ -171,7 +171,7 @@ export default function Projects({ projects, projectDetails }: ProjectsProps) {
             {/* Project Detail Modal with Tabs */}
             {selectedProject && (
                 <div
-                    className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+                    className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-2 sm:p-4"
                     onClick={() => setSelectedProject(null)}
                 >
                     <motion.div
@@ -179,29 +179,29 @@ export default function Projects({ projects, projectDetails }: ProjectsProps) {
                         animate={{ opacity: 1, scale: 1 }}
                         exit={{ opacity: 0, scale: 0.95 }}
                         transition={{ duration: 0.2 }}
-                        className="bg-[var(--bg-secondary)] border border-[var(--border-primary)] rounded-lg max-w-5xl w-full max-h-[90vh] flex flex-col relative"
+                        className="bg-[var(--bg-secondary)] border border-[var(--border-primary)] rounded-lg max-w-5xl w-full max-h-[90vh] flex flex-col relative mx-2 sm:mx-4 md:mx-0"
                         onClick={(e) => e.stopPropagation()}
                     >
                         {/* Sticky Header */}
-                        <div className="sticky top-0 z-20 bg-[var(--bg-secondary)] border-b border-[var(--border-primary)] px-8 pt-6 pb-4 rounded-t-lg">
+                        <div className="sticky top-0 z-20 bg-[var(--bg-secondary)] border-b border-[var(--border-primary)] px-4 sm:px-6 md:px-8 pt-4 sm:pt-6 pb-3 sm:pb-4 rounded-t-lg">
                             <button
                                 onClick={() => setSelectedProject(null)}
-                                className="absolute top-4 right-4 text-[var(--text-tertiary)] hover:text-[var(--accent-primary)] transition-colors"
+                                className="absolute top-4 md:top-4 right-4 md:right-4 text-[var(--text-tertiary)] hover:text-[var(--accent-primary)] transition-colors z-10"
                             >
-                                <FaTimes className="text-2xl" />
+                                <FaTimes className="text-xl md:text-2xl" />
                             </button>
 
-                            <h2 className="text-3xl md:text-4xl font-bold text-[var(--text-primary)] mb-2 pr-12">
+                            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-[var(--text-primary)] mb-2 pr-8 sm:pr-10 md:pr-12">
                                 {selectedProject.title}
                             </h2>
-                            <p className="text-[var(--text-secondary)] opacity-80 mb-4 leading-relaxed">{selectedProject.tagline}</p>
+                            <p className="text-xs sm:text-sm md:text-base text-[var(--text-secondary)] opacity-80 mb-3 sm:mb-4 leading-relaxed">{selectedProject.tagline}</p>
 
                             {/* Tech Stack */}
-                            <div className="flex flex-wrap gap-2 mb-4">
+                            <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-3 sm:mb-4">
                                 {selectedProject.tech.map((tech, idx) => (
                                     <span
                                         key={idx}
-                                        className="px-3 py-1 bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] rounded text-xs text-[var(--text-secondary)] opacity-80"
+                                        className="px-2 sm:px-3 py-0.5 sm:py-1 bg-[var(--bg-tertiary)] border border-[var(--border-secondary)] rounded text-[10px] sm:text-xs text-[var(--text-secondary)] opacity-80"
                                     >
                                         {tech}
                                     </span>
@@ -209,7 +209,7 @@ export default function Projects({ projects, projectDetails }: ProjectsProps) {
                             </div>
 
                             {/* Tabs */}
-                            <div className="flex gap-1 border-b border-[var(--border-secondary)]">
+                            <div className="flex gap-0.5 sm:gap-1 border-b border-[var(--border-secondary)] overflow-x-auto">
                                 {[
                                     { id: 'summary', label: 'Summary' },
                                     { id: 'engineering', label: 'Engineering' },
@@ -218,7 +218,7 @@ export default function Projects({ projects, projectDetails }: ProjectsProps) {
                                     <button
                                         key={tab.id}
                                         onClick={() => setActiveTab(tab.id as any)}
-                                        className={`px-5 py-2.5 text-sm font-medium transition-colors relative ${activeTab === tab.id
+                                        className={`px-3 sm:px-5 py-2 sm:py-2.5 text-xs sm:text-sm font-medium transition-colors relative whitespace-nowrap ${activeTab === tab.id
                                             ? 'text-[var(--accent-primary)]'
                                             : 'text-[var(--text-tertiary)] hover:text-[var(--text-primary)]'
                                             }`}
@@ -233,7 +233,7 @@ export default function Projects({ projects, projectDetails }: ProjectsProps) {
                         </div>
 
                         {/* Scrollable Content */}
-                        <div className="overflow-y-auto px-8 py-8">
+                        <div className="overflow-y-auto px-4 sm:px-6 md:px-8 py-4 sm:py-6 md:py-8">
                             <div className="prose prose-invert max-w-none">
                                 <ReactMarkdown
                                     rehypePlugins={[rehypeSanitize]}
@@ -271,14 +271,14 @@ export default function Projects({ projects, projectDetails }: ProjectsProps) {
 
                                             // Otherwise render as normal paragraph
                                             return (
-                                                <p className="text-sm text-[var(--text-secondary)] opacity-90 mb-3 leading-relaxed max-w-none">{children}</p>
+                                                <p className="text-sm md:text-base text-[var(--text-secondary)] opacity-90 mb-3 leading-relaxed max-w-none">{children}</p>
                                             );
                                         },
                                         ul: ({ children }) => (
-                                            <ul className="space-y-2 mb-8">{children}</ul>
+                                            <ul className="flex flex-col gap-2 mb-8">{children}</ul>
                                         ),
                                         li: ({ children }) => (
-                                            <li className="text-sm text-[var(--text-secondary)] opacity-90 flex items-start gap-3 leading-relaxed">
+                                            <li className="text-sm md:text-base text-[var(--text-secondary)] opacity-90 flex items-start gap-3 leading-relaxed">
                                                 <span className="text-[var(--accent-primary)] mt-1 text-xs">•</span>
                                                 <span className="flex-1">{children}</span>
                                             </li>
@@ -350,7 +350,7 @@ export default function Projects({ projects, projectDetails }: ProjectsProps) {
                         </div>
 
                         {/* Sticky Footer - Removed CTAs */}
-                        <div className="sticky bottom-0 bg-[var(--bg-secondary)] border-t border-[var(--border-primary)] px-8 py-4 rounded-b-lg flex gap-4">
+                        <div className="sticky bottom-0 bg-[var(--bg-secondary)] border-t border-[var(--border-primary)] px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 rounded-b-lg flex gap-3 sm:gap-4">
                         </div>
                     </motion.div>
                 </div>

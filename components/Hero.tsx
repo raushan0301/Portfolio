@@ -20,7 +20,7 @@ export default function Hero({ name, tagline, subtitle, focus, github, linkedin,
             {/* Subtle background gradient */}
             <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[var(--bg-secondary)] pointer-events-none" />
 
-            <div className="section-container relative z-10 py-20">
+            <div className="section-container relative z-10 py-16 pt-24 sm:py-20 sm:pt-28 md:py-20 md:pt-32 lg:pt-40 xl:pt-32 2xl:pt-20">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -32,7 +32,7 @@ export default function Hero({ name, tagline, subtitle, focus, github, linkedin,
                         initial={{ opacity: 0, scale: 0.8 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 0.8, delay: 0.2 }}
-                        className="mb-8 flex justify-center"
+                        className="mb-6 sm:mb-8 flex justify-center"
                     >
                         <motion.div
                             animate={{ y: [0, -8, 0] }}
@@ -45,7 +45,7 @@ export default function Hero({ name, tagline, subtitle, focus, github, linkedin,
 
                             {/* Flip container */}
                             <div
-                                className="flip-container relative w-[280px] h-[280px] cursor-pointer"
+                                className="flip-container relative w-[160px] h-[160px] sm:w-[200px] sm:h-[200px] md:w-[240px] md:h-[240px] lg:w-[220px] lg:h-[220px] xl:w-[240px] xl:h-[240px] 2xl:w-[280px] 2xl:h-[280px] cursor-pointer"
                                 style={{
                                     transformStyle: 'preserve-3d',
                                 }}
@@ -79,8 +79,6 @@ export default function Hero({ name, tagline, subtitle, focus, github, linkedin,
                                     <img
                                         src="/profile.jpg"
                                         alt="Raushan Raj"
-                                        width={280}
-                                        height={280}
                                         className="w-full h-full object-cover"
                                     />
                                 </div>
@@ -98,8 +96,6 @@ export default function Hero({ name, tagline, subtitle, focus, github, linkedin,
                                     <img
                                         src="/profile.jpg"
                                         alt="Raushan Raj"
-                                        width={280}
-                                        height={280}
                                         className="w-full h-full object-cover scale-110"
                                     />
                                     {/* Enhanced gradient overlay */}
@@ -113,13 +109,13 @@ export default function Hero({ name, tagline, subtitle, focus, github, linkedin,
                                             transition={{ duration: 0.5, delay: 0.3 }}
                                             className="text-center"
                                         >
-                                            <h2 className="text-6xl font-bold text-white mb-2">
+                                            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-2">
                                                 Hi
                                             </h2>
                                             <motion.span
                                                 animate={{ rotate: [0, 14, -8, 14, -4, 10, 0] }}
                                                 transition={{ duration: 1.5, repeat: Infinity, repeatDelay: 1 }}
-                                                className="text-7xl inline-block"
+                                                className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl inline-block"
                                             >
                                                 👋
                                             </motion.span>
@@ -132,7 +128,7 @@ export default function Hero({ name, tagline, subtitle, focus, github, linkedin,
 
                     {/* Name */}
                     <motion.h1
-                        className="mb-6"
+                        className="mb-4 sm:mb-6 px-4"
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.1 }}
@@ -142,7 +138,7 @@ export default function Hero({ name, tagline, subtitle, focus, github, linkedin,
 
                     {/* Tagline */}
                     <motion.p
-                        className="text-xl mb-4 max-w-3xl mx-auto"
+                        className="text-base sm:text-lg md:text-xl mb-3 sm:mb-4 max-w-3xl mx-auto px-4"
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.2 }}
@@ -152,7 +148,7 @@ export default function Hero({ name, tagline, subtitle, focus, github, linkedin,
 
                     {/* Subtitle */}
                     <motion.p
-                        className="text-base mb-2 text-[var(--text-tertiary)]"
+                        className="text-sm sm:text-base mb-2 text-[var(--text-tertiary)] px-4"
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.3 }}
@@ -162,7 +158,7 @@ export default function Hero({ name, tagline, subtitle, focus, github, linkedin,
 
                     {/* Focus areas */}
                     <motion.p
-                        className="text-base mb-12 gradient-text font-medium"
+                        className="text-sm sm:text-base mb-8 sm:mb-12 gradient-text font-medium px-4"
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.4 }}
@@ -172,14 +168,14 @@ export default function Hero({ name, tagline, subtitle, focus, github, linkedin,
 
                     {/* CTA Buttons */}
                     <motion.div
-                        className="flex flex-wrap gap-4 justify-center"
+                        className="flex flex-wrap gap-2 sm:gap-3 md:gap-4 justify-center px-4"
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.5 }}
                     >
                         <a
                             href="#projects"
-                            className="button px-6 py-3 border border-[var(--border-primary)] text-[var(--text-primary)] font-medium rounded-lg hover:border-[var(--accent-primary)] hover:text-[var(--accent-primary)] flex items-center gap-2"
+                            className="button px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 md:py-3 border border-[var(--border-primary)] text-[var(--text-primary)] font-medium rounded-lg hover:border-[var(--accent-primary)] hover:text-[var(--accent-primary)] flex items-center gap-2 text-xs sm:text-sm md:text-base whitespace-nowrap"
                         >
                             View Projects
                         </a>
@@ -188,9 +184,9 @@ export default function Hero({ name, tagline, subtitle, focus, github, linkedin,
                             href={github}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="button px-6 py-3 border border-[var(--border-primary)] text-[var(--text-primary)] font-medium rounded-lg hover:border-[var(--accent-primary)] hover:text-[var(--accent-primary)] flex items-center gap-2"
+                            className="button px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 md:py-3 border border-[var(--border-primary)] text-[var(--text-primary)] font-medium rounded-lg hover:border-[var(--accent-primary)] hover:text-[var(--accent-primary)] flex items-center gap-2 text-xs sm:text-sm md:text-base whitespace-nowrap"
                         >
-                            <FaGithub className="text-xl" />
+                            <FaGithub className="text-base sm:text-lg md:text-xl" />
                             GitHub
                         </Link>
 
@@ -198,9 +194,9 @@ export default function Hero({ name, tagline, subtitle, focus, github, linkedin,
                             href={linkedin}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="button px-6 py-3 border border-[var(--border-primary)] text-[var(--text-primary)] font-medium rounded-lg hover:border-[var(--accent-primary)] hover:text-[var(--accent-primary)] flex items-center gap-2"
+                            className="button px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 md:py-3 border border-[var(--border-primary)] text-[var(--text-primary)] font-medium rounded-lg hover:border-[var(--accent-primary)] hover:text-[var(--accent-primary)] flex items-center gap-2 text-xs sm:text-sm md:text-base whitespace-nowrap"
                         >
-                            <FaLinkedin className="text-xl" />
+                            <FaLinkedin className="text-base sm:text-lg md:text-xl" />
                             LinkedIn
                         </Link>
 
@@ -208,9 +204,9 @@ export default function Hero({ name, tagline, subtitle, focus, github, linkedin,
                             href={resume}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="button px-6 py-3 border border-[var(--border-primary)] text-[var(--text-primary)] font-medium rounded-lg hover:border-[var(--accent-primary)] hover:text-[var(--accent-primary)] flex items-center gap-2"
+                            className="button px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 md:py-3 border border-[var(--border-primary)] text-[var(--text-primary)] font-medium rounded-lg hover:border-[var(--accent-primary)] hover:text-[var(--accent-primary)] flex items-center gap-2 text-xs sm:text-sm md:text-base whitespace-nowrap"
                         >
-                            <FaFileDownload className="text-xl" />
+                            <FaFileDownload className="text-base sm:text-lg md:text-xl" />
                             Resume
                         </a>
                     </motion.div>

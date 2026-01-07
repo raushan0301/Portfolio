@@ -22,7 +22,7 @@ interface CertificationsProps {
 
 export default function Certifications({ certifications }: CertificationsProps) {
     const ref = useRef(null);
-    const isInView = useInView(ref, { once: true, margin: "-100px" });
+    const isInView = useInView(ref, { margin: "0px", amount: 0.2 });
 
     const webDevCerts = certifications.filter(c => c.category === 'Web Development');
     const securityCerts = certifications.filter(c => c.category === 'Cybersecurity');
@@ -38,7 +38,7 @@ export default function Certifications({ certifications }: CertificationsProps) 
         >
             {/* Title with Status Badge */}
             <div className="flex items-start justify-between gap-3 mb-2">
-                <h3 className="text-xl font-bold text-[var(--text-primary)] leading-tight flex-1">
+                <h3 className="text-lg sm:text-xl font-bold text-[var(--text-primary)] leading-tight flex-1">
                     {cert.title}
                 </h3>
                 {isInProgress(cert.date) ? (
@@ -55,26 +55,26 @@ export default function Certifications({ certifications }: CertificationsProps) 
             </div>
 
             {/* Issuer & Date - Smaller & Muted */}
-            <div className="flex items-center justify-between gap-3 mb-3">
-                <p className="text-sm font-medium text-[var(--accent-primary)]">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-3 mb-2 sm:mb-3">
+                <p className="text-xs sm:text-sm font-medium text-[var(--accent-primary)]">
                     {cert.issuer}
                 </p>
-                <p className="text-xs text-[var(--text-tertiary)]">{cert.date}</p>
+                <p className="text-[10px] sm:text-xs text-[var(--text-tertiary)]">{cert.date}</p>
             </div>
 
             {/* Description - Shorter & Lighter */}
-            <p className="text-sm text-[var(--text-secondary)] leading-relaxed mb-4 opacity-80">
+            <p className="text-xs sm:text-sm text-[var(--text-secondary)] leading-relaxed mb-3 sm:mb-4 opacity-80">
                 {cert.description}
             </p>
 
             {/* Bottom section - pushed to bottom with mt-auto */}
             <div className="mt-auto">
                 {/* Tags - Smaller Pills with Lower Opacity */}
-                <div className="flex flex-wrap gap-2 mb-4">
+                <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-3 sm:mb-4">
                     {cert.skills.map((skill, idx) => (
                         <span
                             key={idx}
-                            className="text-xs px-2.5 py-1 bg-[var(--bg-secondary)] border border-[var(--border-secondary)] rounded-full text-[var(--text-tertiary)] opacity-70 hover:opacity-100 transition-opacity"
+                            className="text-[10px] sm:text-xs px-2 sm:px-2.5 py-0.5 sm:py-1 bg-[var(--bg-secondary)] border border-[var(--border-secondary)] rounded-full text-[var(--text-tertiary)] opacity-70 hover:opacity-100 transition-opacity"
                         >
                             {skill}
                         </span>
@@ -87,9 +87,9 @@ export default function Certifications({ certifications }: CertificationsProps) 
                         href={cert.certificateUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 text-sm font-medium text-[var(--accent-primary)] hover:text-[var(--accent-secondary)] transition-colors "
+                        className="inline-flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm font-medium text-[var(--accent-primary)] hover:text-[var(--accent-secondary)] transition-colors "
                     >
-                        <FaExternalLinkAlt className="text-xs " />
+                        <FaExternalLinkAlt className="text-[10px] sm:text-xs " />
                         View Certificate
                     </a>
                 )}
@@ -107,23 +107,23 @@ export default function Certifications({ certifications }: CertificationsProps) 
                     transition={{ duration: 0.6 }}
                 >
                     {/* Section Header */}
-                    <div className="section-header mb-10">
+                    <div className="section-header mb-6 sm:mb-10">
                         <h2 className="section-title">Certifications & Learning</h2>
                         <div className="section-underline" />
                     </div>
 
                     {/* Web Development Section */}
                     {webDevCerts.length > 0 && (
-                        <div className="mb-12">
-                            <div className="mb-6">
-                                <h3 className="text-2xl font-bold text-[var(--text-primary)] mb-2">
+                        <div className="mb-8 sm:mb-12">
+                            <div className="mb-4 sm:mb-6">
+                                <h3 className="text-xl sm:text-2xl font-bold text-[var(--text-primary)] mb-1 sm:mb-2">
                                     Web Development
                                 </h3>
                                 <p className="text-sm text-[var(--text-tertiary)] opacity-70">
                                     Full-stack development courses covering frontend, backend, and deployment
                                 </p>
                             </div>
-                            <div className="grid md:grid-cols-2 gap-6 items-stretch">
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 items-stretch">
                                 {webDevCerts.map((cert, idx) => (
                                     <CertCard key={cert.id} cert={cert} index={idx} />
                                 ))}
@@ -141,15 +141,15 @@ export default function Certifications({ certifications }: CertificationsProps) 
                     {/* Cybersecurity Section */}
                     {securityCerts.length > 0 && (
                         <div>
-                            <div className="mb-6">
-                                <h3 className="text-2xl font-bold text-[var(--text-primary)] mb-2">
+                            <div className="mb-4 sm:mb-6">
+                                <h3 className="text-xl sm:text-2xl font-bold text-[var(--text-primary)] mb-1 sm:mb-2">
                                     Cybersecurity & Ethical Hacking
                                 </h3>
                                 <p className="text-sm text-[var(--text-tertiary)] opacity-70">
                                     Security-focused learning and hands-on labs in ethical hacking & defense
                                 </p>
                             </div>
-                            <div className="grid md:grid-cols-2 gap-6 items-stretch">
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 items-stretch">
                                 {securityCerts.map((cert, idx) => (
                                     <CertCard key={cert.id} cert={cert} index={idx + webDevCerts.length} />
                                 ))}
