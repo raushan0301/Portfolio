@@ -46,5 +46,6 @@ Backend
 **Impact Metrics**
  
 • 15 min → <2 min average search time  
-• Real-time updates across devices  
-• Scalable foundation for future modules
+• 2 min 40 sec average engagement time per user  
+• 929 active users
+
