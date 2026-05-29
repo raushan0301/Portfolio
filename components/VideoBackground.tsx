@@ -24,7 +24,7 @@ export default function VideoBackground() {
                 playsInline
                 className="absolute inset-0 w-full h-full object-cover"
             >
-                <source src="/videos/Background.mp4" type="video/mp4" />
+                <source src="https://res.cloudinary.com/dw0obpywg/video/upload/v1780049680/quovfvqogtzlzci3j0fi.mp4" type="video/mp4" />
             </video>
 
             {/* Dark overlay — keeps text readable while letting video show */}
