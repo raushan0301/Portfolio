@@ -10,12 +10,22 @@ interface AboutProps {
     current: string;
 }
 
-export default function About({ intro, approach, current }: AboutProps) {
+const strengths = [
+    { icon: '🏗️', label: 'Full-Stack Architecture', sub: 'End-to-end system design' },
+    { icon: '🔐', label: 'Security-First Dev', sub: 'RBAC, auth & hardening' },
+    { icon: '⚡', label: 'Production Quality', sub: 'Scalable, maintainable code' },
+    { icon: '🛡️', label: 'Ethical Hacking', sub: 'CEH v13 & CND v3 labs' },
+];
+
+export default function About({ intro }: Pick<AboutProps, 'intro'>) {
     const ref = useRef(null);
-    const isInView = useInView(ref, { margin: "0px", amount: 0.2 });
+    const isInView = useInView(ref, { margin: '0px', amount: 0.2 });
+
+    // Compact intro: first two sentences max
+    const compactIntro = intro.split('.').slice(0, 2).join('.') + '.';
 
     return (
-        <section id="about" className="section-spacing bg-[var(--bg-secondary)] pt-20 sm:pt-24 md:pt-32 xl:pt-20">
+        <section id="about" className="section-spacing pt-20 sm:pt-24 md:pt-32 xl:pt-20" style={{ background: 'rgba(17,17,17,0.5)', backdropFilter: 'blur(8px)' }}>
             <div className="section-container">
                 <motion.div
                     ref={ref}
@@ -28,55 +38,37 @@ export default function About({ intro, approach, current }: AboutProps) {
                         <div className="section-underline" />
                     </div>
 
-                    {/* Two-column layout */}
-                    <div className="grid grid-cols-1 md:grid-cols-5 gap-8 sm:gap-12 md:gap-16">
-                        {/* Left: Short intro */}
-                        <div className="md:col-span-2">
-                            <p className="text-base sm:text-lg leading-relaxed text-[var(--text-primary)] font-medium">
-                                {intro}
-                            </p>
-                        </div>
+                    {/* Compact 2-line intro */}
+                    <motion.p
+                        className="text-base sm:text-lg leading-relaxed text-[var(--text-primary)] font-medium mb-8 max-w-2xl"
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                        transition={{ duration: 0.6, delay: 0.1 }}
+                    >
+                        {compactIntro}
+                    </motion.p>
 
-                        {/* Right: Structured content */}
-                        <div className="md:col-span-3 flex flex-col gap-6 sm:gap-8">
-                            <div>
-                                <h3 className="text-sm sm:text-base font-semibold text-[var(--accent-primary)] mb-3 sm:mb-4 uppercase tracking-wide">
-                                    My Approach
-                                </h3>
-                                <p className="text-sm sm:text-base text-[var(--text-secondary)] leading-relaxed">
-                                    {approach}
-                                </p>
-                            </div>
-
-                            <div>
-                                <h3 className="text-sm sm:text-base font-semibold text-[var(--accent-primary)] mb-3 sm:mb-4 uppercase tracking-wide">
-                                    Currently
-                                </h3>
-                                <p className="text-sm sm:text-base text-[var(--text-secondary)] leading-relaxed">
-                                    {current}
-                                </p>
-                            </div>
-
-                            {/* Key strengths as bullets */}
-                            <div>
-                                <h3 className="text-sm sm:text-base font-semibold text-[var(--accent-primary)] mb-3 sm:mb-4 uppercase tracking-wide">
-                                    Core Strengths
-                                </h3>
-                                <ul className="flex flex-col gap-2 sm:gap-3">
-                                    {[
-                                        'Full-stack architecture & system design',
-                                        'Role-based access control implementation',
-                                        'Production-grade code quality',
-                                        'Security-first development mindset'
-                                    ].map((strength, idx) => (
-                                        <li key={idx} className="flex items-start text-sm sm:text-base text-[var(--text-secondary)]">
-                                            <span className="text-[var(--accent-primary)] mr-2 sm:mr-3 mt-1">✓</span>
-                                            <span>{strength}</span>
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
-                        </div>
+                    {/* 4 visual icon cards */}
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
+                        {strengths.map((item, idx) => (
+                            <motion.div
+                                key={idx}
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                                transition={{ duration: 0.5, delay: 0.15 + idx * 0.1 }}
+                                className="card flex flex-col items-center text-center gap-2 py-5 px-3 group cursor-default"
+                            >
+                                <span className="text-2xl sm:text-3xl group-hover:scale-110 transition-transform duration-300">
+                                    {item.icon}
+                                </span>
+                                <span className="text-xs sm:text-sm font-semibold text-[var(--text-primary)] leading-tight">
+                                    {item.label}
+                                </span>
+                                <span className="text-[10px] sm:text-xs text-[var(--text-tertiary)] leading-snug">
+                                    {item.sub}
+                                </span>
+                            </motion.div>
+                        ))}
                     </div>
                 </motion.div>
             </div>

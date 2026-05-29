@@ -65,7 +65,7 @@ export default function Projects({ projects, projectDetails }: ProjectsProps) {
                                     animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
                                     transition={{ duration: 0.6, delay: index * 0.1 }}
                                     className={`card overflow-hidden cursor-pointer group relative ${project.featured
-                                        ? 'md:col-span-2 border-[var(--accent-primary)]/30 shadow-lg shadow-[var(--accent-primary)]/10'
+                                        ? 'md:col-span-2 gradient-border'
                                         : ''
                                         }`}
                                     onClick={() => handleProjectClick(project)}
@@ -110,11 +110,6 @@ export default function Projects({ projects, projectDetails }: ProjectsProps) {
                                             {project.title}
                                         </h3>
                                         <p className="text-xs sm:text-sm text-[var(--text-tertiary)] mb-3 sm:mb-4">{project.tagline}</p>
-
-                                        {/* Description - Capped at 2 lines */}
-                                        <p className="text-sm md:text-base text-[var(--text-secondary)] mb-4 leading-relaxed line-clamp-2">
-                                            {project.shortDescription}
-                                        </p>
 
                                         {/* Tech Stack - Consistent across all cards */}
                                         <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-3 sm:mb-4">

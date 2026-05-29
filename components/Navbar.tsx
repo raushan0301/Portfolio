@@ -79,9 +79,9 @@ export default function Navbar() {
                 {/* Desktop: Centered pill container */}
                 <div className="hidden md:flex justify-center">
                     <div
-                        className={`transition-all duration-300 rounded-full flex items-center gap-6 ${scrolled
-                            ? 'bg-[var(--bg-primary)]/90 backdrop-blur-xl border border-[var(--border-primary)] shadow-xl'
-                            : 'bg-[var(--bg-primary)]/80 backdrop-blur-lg border border-[var(--border-primary)]/60 shadow-lg'
+                        className={`transition-all duration-500 rounded-full flex items-center gap-6 ${scrolled
+                            ? 'bg-[rgba(10,10,10,0.85)] backdrop-blur-2xl border border-[rgba(6,182,212,0.15)] shadow-[0_0_30px_rgba(6,182,212,0.08),0_8px_32px_rgba(0,0,0,0.4)]'
+                            : 'bg-[rgba(10,10,10,0.6)] backdrop-blur-xl border border-[var(--glass-border)] shadow-lg'
                             }`}
                         style={{
                             paddingLeft: '10px',
@@ -165,7 +165,7 @@ export default function Navbar() {
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -20 }}
                         transition={{ duration: 0.2 }}
-                        className="fixed top-20 sm:top-24 left-4 right-4 z-30 md:hidden bg-[var(--bg-primary)]/95 backdrop-blur-xl border border-[var(--border-primary)] rounded-2xl shadow-2xl overflow-hidden"
+                        className="fixed top-20 sm:top-24 left-4 right-4 z-30 md:hidden bg-[rgba(10,10,10,0.92)] backdrop-blur-2xl border border-[var(--glass-border)] rounded-2xl shadow-2xl overflow-hidden"
                     >
                         <div className="flex flex-col py-2">
                             {navItems.map((item, index) => {

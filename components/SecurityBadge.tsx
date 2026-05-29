@@ -32,7 +32,7 @@ export default function SecurityBadge() {
             >
                 {/* Compact Badge */}
                 <motion.div
-                    className="flex items-center gap-2 bg-[var(--bg-primary)]/90 backdrop-blur-xl border border-green-500/30 rounded-2xl shadow-2xl cursor-pointer"
+                    className="flex items-center gap-2 bg-[rgba(10,10,10,0.85)] backdrop-blur-xl border border-green-500/20 rounded-2xl shadow-[0_0_20px_rgba(74,222,128,0.08)] cursor-pointer"
                     style={{
                         paddingLeft: '12px',
                         paddingRight: '12px',

@@ -1,6 +1,6 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 
@@ -18,7 +18,7 @@ interface TimelineProps {
 
 export default function Timeline({ events }: TimelineProps) {
     const ref = useRef(null);
-    const isInView = useInView(ref, { margin: "0px", amount: 0.2 });
+    const isInView = useInView(ref, { margin: '0px', amount: 0.1 });
 
     return (
         <section id="timeline" className="section-spacing">
@@ -30,52 +30,60 @@ export default function Timeline({ events }: TimelineProps) {
                     transition={{ duration: 0.6 }}
                 >
                     <div className="section-header">
-                        <h2 className="section-title">Career Timeline</h2>
+                        <h2 className="section-title">Timeline</h2>
                         <div className="section-underline" />
                     </div>
 
-                    <div className="relative">
-                        {/* Timeline line */}
-                        <div className="absolute left-2 sm:left-0 md:left-1/2 top-0 bottom-0 w-px bg-[var(--border-primary)] transform md:-translate-x-1/2" />
+                    <div className="relative max-w-3xl">
+                        {/* Animated vertical line */}
+                        <motion.div
+                            className="absolute left-4 sm:left-5 top-0 w-px bg-gradient-to-b from-[var(--accent-primary)] via-[var(--accent-purple)] to-transparent"
+                            initial={{ height: 0 }}
+                            animate={isInView ? { height: '100%' } : { height: 0 }}
+                            transition={{ duration: 1.5, ease: 'easeOut', delay: 0.3 }}
+                        />
 
-                        <div className="flex flex-col gap-12 sm:gap-16 md:gap-20">
+                        <div className="flex flex-col gap-8 sm:gap-10">
                             {events.map((event, index) => (
                                 <motion.div
                                     key={event.id}
-                                    initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
-                                    animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
-                                    transition={{ duration: 0.6, delay: index * 0.1 }}
-                                    className={`relative flex items-start ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
-                                        } flex-col md:gap-8`}
+                                    initial={{ opacity: 0, x: -20 }}
+                                    animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
+                                    transition={{ duration: 0.5, delay: 0.4 + index * 0.12 }}
+                                    className="relative flex items-start gap-6 sm:gap-8 pl-12 sm:pl-14"
                                 >
-                                    {/* Timeline dot */}
-                                    <div className="absolute left-2 sm:left-0 md:left-1/2 w-3 h-3 sm:w-4 sm:h-4 bg-[var(--accent-primary)] rounded-full transform md:-translate-x-1/2 border-2 sm:border-4 border-[var(--bg-primary)] z-10" />
-
-                                    {/* Content */}
-                                    <div className={`flex-1 ml-6 sm:ml-8 md:ml-0 ${index % 2 === 0 ? 'md:text-left md:pr-12' : 'md:pl-12'}`}>
-                                        <div className="card">
-                                            <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3 mb-2 sm:mb-3">
-                                                <span className="text-xs sm:text-sm font-semibold text-[var(--accent-primary)] bg-[var(--bg-secondary)] px-2 sm:px-3 py-1 rounded w-fit">
-                                                    {event.year}
-                                                </span>
-                                                <h3 className="text-lg sm:text-xl font-bold text-[var(--text-primary)]">
-                                                    {event.title}
-                                                </h3>
-                                            </div>
-                                            <p className="text-xs sm:text-sm md:text-base text-[var(--text-secondary)] mb-3 sm:mb-4">{event.description}</p>
-                                            <ul className="flex flex-col gap-1.5 sm:gap-2">
-                                                {event.milestones.slice(0, 3).map((milestone, idx) => (
-                                                    <li key={idx} className="text-xs sm:text-sm text-[var(--text-secondary)] flex items-start">
-                                                        <span className="text-[var(--accent-primary)] mr-1.5 sm:mr-2">✓</span>
-                                                        <span>{milestone}</span>
-                                                    </li>
-                                                ))}
-                                            </ul>
-                                        </div>
+                                    {/* Glowing animated dot */}
+                                    <div className="absolute left-0 top-1 flex items-center justify-center">
+                                        <motion.div
+                                            className="w-8 h-8 sm:w-10 sm:h-10 rounded-full glass-card border border-[var(--accent-primary)]/40 flex items-center justify-center"
+                                            animate={isInView ? {
+                                                boxShadow: [
+                                                    '0 0 0 0 rgba(6,182,212,0.4)',
+                                                    '0 0 0 8px rgba(6,182,212,0)',
+                                                ]
+                                            } : {}}
+                                            transition={{ duration: 2, repeat: Infinity, delay: index * 0.3 }}
+                                        >
+                                            <span className="text-[10px] font-bold text-[var(--accent-primary)]">
+                                                {event.year.slice(-2)}
+                                            </span>
+                                        </motion.div>
                                     </div>
 
-                                    {/* Spacer for alternating layout */}
-                                    <div className="hidden md:block flex-1" />
+                                    {/* Content */}
+                                    <div className="flex-1">
+                                        <div className="flex flex-wrap items-center gap-2 mb-1.5">
+                                            <span className="text-xs font-semibold text-[var(--accent-primary)] bg-[var(--accent-primary)]/10 px-2 py-0.5 rounded">
+                                                {event.year}
+                                            </span>
+                                            <h3 className="text-base sm:text-lg font-bold text-[var(--text-primary)]">
+                                                {event.title}
+                                            </h3>
+                                        </div>
+                                        <p className="text-xs sm:text-sm text-[var(--text-secondary)] leading-relaxed">
+                                            {event.description}
+                                        </p>
+                                    </div>
                                 </motion.div>
                             ))}
                         </div>

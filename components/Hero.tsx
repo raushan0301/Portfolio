@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { FaGithub, FaLinkedin, FaFileDownload } from 'react-icons/fa';
 import Link from 'next/link';
+import { useState, useEffect } from 'react';
 
 interface HeroProps {
     name: string;
@@ -14,11 +15,45 @@ interface HeroProps {
     resume: string;
 }
 
+function TypingEffect({ text, delay = 0 }: { text: string; delay?: number }) {
+    const [displayText, setDisplayText] = useState('');
+    const [showCursor, setShowCursor] = useState(true);
+
+    useEffect(() => {
+        const timeout = setTimeout(() => {
+            let i = 0;
+            const interval = setInterval(() => {
+                if (i <= text.length) {
+                    setDisplayText(text.slice(0, i));
+                    i++;
+                } else {
+                    clearInterval(interval);
+                    // Keep cursor blinking for a bit then hide
+                    setTimeout(() => setShowCursor(false), 2000);
+                }
+            }, 35);
+            return () => clearInterval(interval);
+        }, delay);
+        return () => clearTimeout(timeout);
+    }, [text, delay]);
+
+    return (
+        <span>
+            {displayText}
+            {showCursor && <span className="typing-cursor" />}
+        </span>
+    );
+}
+
 export default function Hero({ name, tagline, subtitle, focus, github, linkedin, resume }: HeroProps) {
     return (
         <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
-            {/* Subtle background gradient */}
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[var(--bg-secondary)] pointer-events-none" />
+            {/* Subtle bottom gradient fade */}
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[rgba(10,10,10,0.8)] pointer-events-none" />
+
+            {/* Floating decorative orbs */}
+            <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-[var(--accent-primary)] rounded-full opacity-[0.03] blur-3xl animate-float pointer-events-none" />
+            <div className="absolute bottom-1/3 right-1/4 w-48 h-48 bg-[var(--accent-purple)] rounded-full opacity-[0.04] blur-3xl animate-float pointer-events-none" style={{ animationDelay: '-3s' }} />
 
             <div className="section-container relative z-10 py-16 pt-24 sm:py-20 sm:pt-28 md:py-20 md:pt-32 lg:pt-40 xl:pt-32 2xl:pt-20">
                 <motion.div
@@ -41,7 +76,7 @@ export default function Hero({ name, tagline, subtitle, focus, github, linkedin,
                             style={{ perspective: '1000px' }}
                         >
                             {/* Glow effect on hover */}
-                            <div className="absolute -inset-1 bg-gradient-to-r from-[var(--accent-primary)] to-[var(--accent-secondary)] rounded-2xl blur-lg opacity-0 group-hover:opacity-60 transition-opacity duration-500" />
+                            <div className="absolute -inset-1 bg-gradient-to-r from-[var(--accent-primary)] to-[var(--accent-purple)] rounded-2xl blur-lg opacity-0 group-hover:opacity-60 transition-opacity duration-500" />
 
                             {/* Flip container */}
                             <div
@@ -99,7 +134,7 @@ export default function Hero({ name, tagline, subtitle, focus, github, linkedin,
                                         className="w-full h-full object-cover scale-110"
                                     />
                                     {/* Enhanced gradient overlay */}
-                                    <div className="absolute inset-0 bg-gradient-to-br from-[var(--accent-primary)]/40 to-[var(--accent-secondary)]/40 backdrop-blur-sm" />
+                                    <div className="absolute inset-0 bg-gradient-to-br from-[var(--accent-primary)]/40 to-[var(--accent-purple)]/40 backdrop-blur-sm" />
 
                                     {/* Hi with wave emoji */}
                                     <div className="absolute inset-0 flex items-center justify-center">
@@ -136,46 +171,40 @@ export default function Hero({ name, tagline, subtitle, focus, github, linkedin,
                         {name}
                     </motion.h1>
 
-                    {/* Tagline */}
+                    {/* Tagline with typing effect */}
                     <motion.p
-                        className="text-base sm:text-lg md:text-xl mb-3 sm:mb-4 max-w-3xl mx-auto px-4"
+                        className="text-base sm:text-lg md:text-xl mb-4 sm:mb-5 max-w-3xl mx-auto px-4"
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.2 }}
                     >
-                        {tagline}
+                        <TypingEffect text={tagline} delay={800} />
                     </motion.p>
 
-                    {/* Subtitle */}
-                    <motion.p
-                        className="text-sm sm:text-base mb-2 text-[var(--text-tertiary)] px-4"
+                    {/* Compact subtitle badge — combines university + focus */}
+                    <motion.div
+                        className="flex justify-center mb-8 sm:mb-12 px-4"
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.3 }}
                     >
-                        {subtitle}
-                    </motion.p>
+                        <span className="inline-flex items-center gap-2 text-xs sm:text-sm text-[var(--text-tertiary)] glass-card px-4 py-2 rounded-full">
+                            <span>{subtitle.split('@')[0].trim()}</span>
+                            <span className="text-[var(--accent-primary)]">•</span>
+                            <span className="gradient-text font-medium">{focus}</span>
+                        </span>
+                    </motion.div>
 
-                    {/* Focus areas */}
-                    <motion.p
-                        className="text-sm sm:text-base mb-8 sm:mb-12 gradient-text font-medium px-4"
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6, delay: 0.4 }}
-                    >
-                        {focus}
-                    </motion.p>
-
-                    {/* CTA Buttons */}
+                    {/* CTA Buttons with glassmorphism */}
                     <motion.div
                         className="flex flex-wrap gap-2 sm:gap-3 md:gap-4 justify-center px-4"
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6, delay: 0.5 }}
+                        transition={{ duration: 0.6, delay: 0.4 }}
                     >
                         <a
                             href="#projects"
-                            className="button px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 md:py-3 border border-[var(--border-primary)] text-[var(--text-primary)] font-medium rounded-lg hover:border-[var(--accent-primary)] hover:text-[var(--accent-primary)] flex items-center gap-2 text-xs sm:text-sm md:text-base whitespace-nowrap"
+                            className="glass-button px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 md:py-3 text-[var(--text-primary)] font-medium rounded-lg flex items-center gap-2 text-xs sm:text-sm md:text-base whitespace-nowrap"
                         >
                             View Projects
                         </a>
@@ -184,7 +213,7 @@ export default function Hero({ name, tagline, subtitle, focus, github, linkedin,
                             href={github}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="button px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 md:py-3 border border-[var(--border-primary)] text-[var(--text-primary)] font-medium rounded-lg hover:border-[var(--accent-primary)] hover:text-[var(--accent-primary)] flex items-center gap-2 text-xs sm:text-sm md:text-base whitespace-nowrap"
+                            className="glass-button px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 md:py-3 text-[var(--text-primary)] font-medium rounded-lg flex items-center gap-2 text-xs sm:text-sm md:text-base whitespace-nowrap"
                         >
                             <FaGithub className="text-base sm:text-lg md:text-xl" />
                             GitHub
@@ -194,7 +223,7 @@ export default function Hero({ name, tagline, subtitle, focus, github, linkedin,
                             href={linkedin}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="button px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 md:py-3 border border-[var(--border-primary)] text-[var(--text-primary)] font-medium rounded-lg hover:border-[var(--accent-primary)] hover:text-[var(--accent-primary)] flex items-center gap-2 text-xs sm:text-sm md:text-base whitespace-nowrap"
+                            className="glass-button px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 md:py-3 text-[var(--text-primary)] font-medium rounded-lg flex items-center gap-2 text-xs sm:text-sm md:text-base whitespace-nowrap"
                         >
                             <FaLinkedin className="text-base sm:text-lg md:text-xl" />
                             LinkedIn
@@ -204,7 +233,7 @@ export default function Hero({ name, tagline, subtitle, focus, github, linkedin,
                             href={resume}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="button px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 md:py-3 border border-[var(--border-primary)] text-[var(--text-primary)] font-medium rounded-lg hover:border-[var(--accent-primary)] hover:text-[var(--accent-primary)] flex items-center gap-2 text-xs sm:text-sm md:text-base whitespace-nowrap"
+                            className="glass-button px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 md:py-3 text-[var(--text-primary)] font-medium rounded-lg flex items-center gap-2 text-xs sm:text-sm md:text-base whitespace-nowrap"
                         >
                             <FaFileDownload className="text-base sm:text-lg md:text-xl" />
                             Resume
@@ -224,7 +253,7 @@ export default function Hero({ name, tagline, subtitle, focus, github, linkedin,
                     <motion.div
                         animate={{ y: [0, 8, 0] }}
                         transition={{ duration: 1.5, repeat: Infinity }}
-                        className="w-6 h-10 border-2 border-[var(--border-primary)] rounded-full flex items-start justify-center p-2"
+                        className="w-6 h-10 border-2 border-[var(--glass-border)] rounded-full flex items-start justify-center p-2"
                     >
                         <div className="w-1.5 h-1.5 bg-[var(--accent-primary)] rounded-full" />
                     </motion.div>

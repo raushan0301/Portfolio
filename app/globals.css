@@ -18,15 +18,25 @@
   /* cyan-600 */
   --accent-glow: rgba(6, 182, 212, 0.15);
 
+  /* Purple accent for gradients */
+  --accent-purple: #8b5cf6;
+  --accent-purple-glow: rgba(139, 92, 246, 0.15);
+
   /* Border colors */
   --border-primary: #262626;
   --border-secondary: #1f1f1f;
+
+  /* Glass effect */
+  --glass-bg: rgba(17, 17, 17, 0.6);
+  --glass-bg-strong: rgba(17, 17, 17, 0.8);
+  --glass-border: rgba(255, 255, 255, 0.06);
 
   /* Shadows */
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
   --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
   --shadow-glow: 0 0 20px var(--accent-glow);
+  --shadow-glow-lg: 0 0 40px var(--accent-glow), 0 0 80px rgba(6, 182, 212, 0.05);
 }
 
 @layer base {
@@ -53,11 +63,17 @@
 }
 
 /* Typography Scale */
+h1,
+h2,
+h3 {
+  font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+}
+
 h1 {
   font-size: 32px;
-  font-weight: 600;
-  line-height: 1.2;
-  letter-spacing: -0.02em;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
   color: var(--text-primary);
 }
 
@@ -149,49 +165,153 @@ small {
   line-height: 1.6;
 }
 
-/* Visual Differentiation for Sections */
+/* ========================================
+   GLASSMORPHISM UTILITIES
+   ======================================== */
+
+.glass-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  border-radius: 0.75rem;
+}
+
+.glass-card-strong {
+  background: var(--glass-bg-strong);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  border-radius: 0.75rem;
+}
+
+.glass-button {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.3s ease;
+}
+
+.glass-button:hover {
+  background: rgba(6, 182, 212, 0.1);
+  border-color: rgba(6, 182, 212, 0.3);
+  box-shadow: 0 0 20px rgba(6, 182, 212, 0.1), inset 0 0 20px rgba(6, 182, 212, 0.05);
+}
+
+/* ========================================
+   ANIMATIONS
+   ======================================== */
+
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes glow-pulse {
+  0%, 100% {
+    opacity: 0.4;
+  }
+
+  50% {
+    opacity: 0.8;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes typing-cursor {
+  0%, 100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient-shift 4s ease infinite;
+}
+
+.animate-glow-pulse {
+  animation: glow-pulse 3s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.typing-cursor::after {
+  content: '|';
+  animation: typing-cursor 0.8s ease-in-out infinite;
+  color: var(--accent-primary);
+  margin-left: 2px;
+}
+
+/* ========================================
+   SECTION VISUAL DIFFERENTIATION
+   ======================================== */
+
+/* All sections are transparent by default to show particle bg */
 #projects {
-  /* Strongest contrast - draws attention */
-  background: var(--bg-secondary);
+  background: rgba(17, 17, 17, 0.7);
+  backdrop-filter: blur(8px);
 }
 
 #projects .card {
-  background: var(--bg-tertiary);
-  border-color: var(--border-primary);
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  border-color: var(--glass-border);
 }
 
 #skills {
-  /* Transparent - let video background show through */
   background: transparent;
 }
 
 #skills .card {
-  /* background: rgba(26, 26, 26, 0.5); */
-
-  background: var(--bg-secondary);
-  /* Lighter than default */
-  border-color: rgba(38, 38, 38, 0.6);
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  border-color: var(--glass-border);
 }
 
 #experience {
-  /* Medium contrast */
-  /* background: var(--bg-primary); */
   background: transparent;
 }
 
 #experience .card {
-  background: var(--bg-tertiary);
-  border-color: var(--border-primary);
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  border-color: var(--glass-border);
 }
 
 #certifications {
-  /* Similar to skills - lighter */
-  background: var(--bg-primary);
+  background: rgba(17, 17, 17, 0.7);
+  backdrop-filter: blur(8px);
 }
 
 #certifications .card {
-  background: rgba(26, 26, 26, 0.5);
-  border-color: rgba(38, 38, 38, 0.6);
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  border-color: var(--glass-border);
 }
 
 /* Selection */
@@ -255,7 +375,7 @@ button:focus-visible {
 
 .section-title {
   font-size: 24px;
-  font-weight: 600;
+  font-weight: 700;
   line-height: 1.3;
   letter-spacing: -0.02em;
   color: var(--text-primary);
@@ -277,7 +397,9 @@ button:focus-visible {
 .section-underline {
   width: 4rem;
   height: 0.25rem;
-  background: var(--accent-primary);
+  background: linear-gradient(90deg, var(--accent-primary), var(--accent-purple));
+  background-size: 200% 100%;
+  animation: gradient-shift 3s ease infinite;
   border-radius: 2px;
   margin-top: 12px;
   display: block;
@@ -286,7 +408,9 @@ button:focus-visible {
 .section-underline-center {
   width: 4rem;
   height: 0.25rem;
-  background: var(--accent-primary);
+  background: linear-gradient(90deg, var(--accent-primary), var(--accent-purple));
+  background-size: 200% 100%;
+  animation: gradient-shift 3s ease infinite;
   border-radius: 2px;
   margin-top: 12px;
   margin-left: auto;
@@ -294,10 +418,12 @@ button:focus-visible {
   display: block;
 }
 
-/* Card styles - responsive padding */
+/* Card styles - responsive padding with glassmorphism */
 .card {
-  background: var(--bg-tertiary);
-  border: 1px solid var(--border-primary);
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
   border-radius: 0.75rem;
   padding: 16px;
   transition: all 0.3s ease;
@@ -316,8 +442,8 @@ button:focus-visible {
 }
 
 .card:hover {
-  border-color: var(--accent-primary);
-  box-shadow: 0 0 0 1px var(--accent-primary), var(--shadow-glow);
+  border-color: rgba(6, 182, 212, 0.3);
+  box-shadow: 0 0 0 1px rgba(6, 182, 212, 0.1), 0 0 30px rgba(6, 182, 212, 0.08);
 }
 
 /* Utility classes */
@@ -340,10 +466,33 @@ button:focus-visible {
 }
 
 .gradient-text {
-  background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+  background: linear-gradient(135deg, var(--accent-primary), var(--accent-purple));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+/* Gradient border for featured items */
+.gradient-border {
+  position: relative;
+}
+
+.gradient-border::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: 0.75rem;
+  padding: 1px;
+  background: linear-gradient(135deg, var(--accent-primary), var(--accent-purple));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0.5;
+  transition: opacity 0.3s ease;
+}
+
+.gradient-border:hover::before {
+  opacity: 1;
 }
 
 /* Button styles */
@@ -370,6 +519,33 @@ a {
 
 a:hover {
   color: var(--accent-secondary);
+}
+
+/* Skill pill glow effect */
+.skill-pill {
+  transition: all 0.3s ease;
+}
+
+.skill-pill:hover {
+  border-color: var(--accent-primary);
+  color: var(--accent-primary);
+  box-shadow: 0 0 12px rgba(6, 182, 212, 0.15), inset 0 0 12px rgba(6, 182, 212, 0.05);
+  transform: translateY(-1px);
+}
+
+/* Timeline glow dot */
+.timeline-dot {
+  position: relative;
+}
+
+.timeline-dot::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  background: var(--accent-primary);
+  opacity: 0;
+  animation: glow-pulse 3s ease-in-out infinite;
 }
 
 /* Responsive typography - mobile overrides */

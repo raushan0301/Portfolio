@@ -11,7 +11,7 @@ import Timeline from '@/components/Timeline';
 import Contact from '@/components/Contact';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import VideoBackground from '@/components/VideoBackground';
+import ParticleBackground from '@/components/ParticleBackground';
 import AvailableBadge from '@/components/AvailableBadge';
 import SecurityBadge from '@/components/SecurityBadge';
 
@@ -53,8 +53,8 @@ export default function Home() {
 
   return (
     <main className="min-h-screen">
-      {/* Animated Video Background */}
-      <VideoBackground />
+      {/* Interactive 3D Particle Background */}
+      <ParticleBackground />
 
       <Navbar />
 
@@ -70,8 +70,6 @@ export default function Home() {
 
       <About
         intro={personal.about.intro}
-        approach={personal.about.approach}
-        current={personal.about.current}
       />
 
       <Skills
