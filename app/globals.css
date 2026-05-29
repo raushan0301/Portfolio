@@ -273,8 +273,8 @@ small {
 
 /* All sections are transparent by default to show particle bg */
 #projects {
-  background: rgba(17, 17, 17, 0.7);
-  backdrop-filter: blur(8px);
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(4px);
 }
 
 #projects .card {
@@ -304,8 +304,8 @@ small {
 }
 
 #certifications {
-  background: rgba(17, 17, 17, 0.7);
-  backdrop-filter: blur(8px);
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(4px);
 }
 
 #certifications .card {

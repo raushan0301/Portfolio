@@ -64,8 +64,8 @@ export default function Timeline({ events }: TimelineProps) {
                                             } : {}}
                                             transition={{ duration: 2, repeat: Infinity, delay: index * 0.3 }}
                                         >
-                                            <span className="text-[10px] font-bold text-[var(--accent-primary)]">
-                                                {event.year.slice(-2)}
+                                            <span className="text-[9px] font-black text-[var(--accent-primary)] leading-none text-center">
+                                                {event.year.includes('Present') ? 'NOW' : event.year.match(/\d{4}/)?.[0]?.slice(-2) ?? ''}
                                             </span>
                                         </motion.div>
                                     </div>
@@ -73,8 +73,13 @@ export default function Timeline({ events }: TimelineProps) {
                                     {/* Content */}
                                     <div className="flex-1">
                                         <div className="flex flex-wrap items-center gap-2 mb-1.5">
-                                            <span className="text-xs font-semibold text-[var(--accent-primary)] bg-[var(--accent-primary)]/10 px-2 py-0.5 rounded">
-                                                {event.year}
+                                            <span className={`text-xs font-semibold px-2.5 py-0.5 rounded-full border ${
+                                                event.year.includes('Present')
+                                                    ? 'bg-emerald-500/15 text-emerald-400 border-emerald-500/30'
+                                                    : 'bg-[var(--accent-primary)]/10 text-[var(--accent-primary)] border-[var(--accent-primary)]/20'
+                                            }`}>
+                                                {/* Show clean label: just year + quarter, no "- Present" clutter */}
+                                                {event.year.replace(' - Present', ' → Now')}
                                             </span>
                                             <h3 className="text-base sm:text-lg font-bold text-[var(--text-primary)]">
                                                 {event.title}

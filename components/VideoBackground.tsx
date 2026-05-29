@@ -6,7 +6,6 @@ export default function VideoBackground() {
     const videoRef = useRef<HTMLVideoElement>(null);
 
     useEffect(() => {
-        // Ensure video plays on mount
         if (videoRef.current) {
             videoRef.current.play().catch((error) => {
                 console.log('Video autoplay failed:', error);
@@ -16,7 +15,7 @@ export default function VideoBackground() {
 
     return (
         <div className="fixed inset-0 -z-10 overflow-hidden">
-            {/* Video Background */}
+            {/* Video */}
             <video
                 ref={videoRef}
                 autoPlay
@@ -28,11 +27,11 @@ export default function VideoBackground() {
                 <source src="/videos/Background.mp4" type="video/mp4" />
             </video>
 
-            {/* Dark overlay for readability */}
-            <div className="absolute inset-0 bg-black/60" />
+            {/* Dark overlay — keeps text readable while letting video show */}
+            <div className="absolute inset-0 bg-black/55" />
 
-            {/* Subtle gradient overlay */}
-            <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/60" />
+            {/* Subtle vignette for depth */}
+            <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/50" />
         </div>
     );
 }
