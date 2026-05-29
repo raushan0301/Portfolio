@@ -51,8 +51,8 @@ const nextConfig: NextConfig = {
               "font-src 'self' https://fonts.gstatic.com",
               // Images: Allow from same origin + data URLs + any HTTPS source
               "img-src 'self' data: https:",
-              // Media: Allow from same origin
-              "media-src 'self'",
+              // Media: Allow from same origin + Cloudinary CDN for video background
+              "media-src 'self' https://res.cloudinary.com",
               // AJAX/WebSocket: Allow from same origin
               "connect-src 'self'",
               // Frames: Block all iframes (prevents embedding malicious content)
